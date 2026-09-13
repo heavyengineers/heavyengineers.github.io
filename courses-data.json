@@ -801,18 +801,287 @@
     {
       "slug": "system-design-interview-blueprint",
       "title": "System Design Interview Blueprint",
-      "badge": "Upcoming",
+      "badge": "Free",
       "badgeStyle": "",
       "icon": "\ud83c\udfd7\ufe0f",
-      "description": "A practical system-design roadmap inspired by Alex Xu's System Design Interview: An Insider's Guide, covering scalability, estimation, API design, distributed systems, and interview-ready architecture thinking.",
+      "description": "A practical system design course inspired by Alex Xu's book, covering architecture thinking, trade-offs, data flow, caching, reliability, and interview-ready design patterns.",
       "meta": [
         "System design",
+        "Architecture",
         "Interview prep"
       ],
-      "path": "#",
-      "status": "upcoming",
-      "isUpcoming": true,
-      "sections": []
+      "path": "course.html?course=system-design-interview-blueprint",
+      "sections": [
+        {
+          "id": "system-design-intro",
+          "label": "Start here",
+          "title": "System design is the skill of turning vague product ideas into scalable architecture.",
+          "intro": "This course is built around the same mindset as a strong engineering book: theory first, then examples, then trade-offs, then implementation patterns you can reuse in interviews and real systems.",
+          "cards": [
+            {
+              "title": "Who is this for?",
+              "body": "Engineers preparing for interviews, product-minded developers, and curious builders who want to reason about scale, data flow, and bottlenecks with confidence."
+            },
+            {
+              "title": "What you will learn",
+              "body": "How to translate a vague requirement into a real architecture, estimate load, select storage layers, and defend design trade-offs clearly."
+            },
+            {
+              "title": "Why this matters",
+              "body": "Modern systems are not built by memorizing buzzwords. They are built by understanding constraints, failure modes, and the right place to add complexity."
+            }
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Product idea] --> B[Scope the problem]\nB --> C[Estimate load]\nC --> D[Choose services and storage]\nD --> E[Design for growth]\nE --> F[Defend trade-offs]"
+            }
+          ],
+          "paragraphs": [
+            "A system design interview is rarely about writing a perfect diagram. It is about showing that you can think clearly under uncertainty. The best answers begin with constraints, clarify assumptions, and then build a system that can handle real traffic and failure conditions.",
+            "This course follows a book-like learning flow: concept first, architecture next, real-world examples after that, and then implementation patterns that you can reuse across chat systems, feeds, search services, and file platforms.",
+            "The goal is not to memorize a fixed answer for one product. The goal is to build a reusable mental model so that every new architecture problem feels structured instead of chaotic."
+          ]
+        },
+        {
+          "id": "scale-zero-to-millions",
+          "label": "Lesson 1",
+          "title": "Scale from zero to millions of users",
+          "intro": "Every scalable system begins as a simple one-server design. The real engineering skill is knowing when to add load balancers, caches, queues, and replicated storage without overengineering the system.",
+          "list": [
+            "A single app server and one database work well for early product growth.",
+            "Load balancers help distribute traffic when one process is no longer enough.",
+            "A cache is a performance multiplier when repeated reads are expensive.",
+            "Queues move non-critical work out of the request path and into background processing.",
+            "Horizontal scaling is useful only when the architecture and traffic pattern justify it."
+          ],
+          "paragraphs": [
+            "A common mistake is to jump from a single database to a distributed architecture before there is real evidence that the system needs it. In early stages, simplicity is a strength. It reduces debugging time, lowers operational risk, and makes the product easier to ship.",
+            "As users increase, bottlenecks appear: request volume, CPU usage, database pressure, and storage limits. That is when engineers introduce separation of concerns: stateless app servers, read replicas, caches, and asynchronous background workers.",
+            "This lesson teaches a simple rule: scale only when your traffic and product behavior demand it. A good architecture grows in layers, not in leaps."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[User traffic] --> B[One web server]\nB --> C[One database]\nC --> D[Load balancer]\nD --> E[Multiple app instances]\nE --> F[Cache]\nF --> G[Async workers]"
+            }
+          ],
+          "codeBlocks": [
+            "# A simple request path\nGET /feed -> app server -> database -> response\n\n# When traffic grows\nGET /feed -> load balancer -> app server -> cache\napp server -> database only on cache miss\nbackground workers process heavy updates asynchronously"
+          ]
+        },
+        {
+          "id": "requirements-and-constraints",
+          "label": "Lesson 2",
+          "title": "Requirements, constraints, and non-functional goals",
+          "intro": "Every design begins with a requirement. The difference between a good and a weak system design is whether the team can separate functional needs from performance and reliability expectations.",
+          "list": [
+            "Functional requirements explain what the system should do.",
+            "Non-functional expectations define speed, availability, durability, and consistency.",
+            "Constraints limit the design: traffic, latency targets, data size, and operational budget.",
+            "Good design means choosing trade-offs that match product reality."
+          ],
+          "paragraphs": [
+            "A vague prompt like \u201cDesign WhatsApp\u201d or \u201cDesign a social feed\u201d is not a design. It is the starting point for a requirements conversation. You need to ask questions: how many users, what percentage are active, how many writes per second, how much latency is acceptable, and what kind of failures are tolerated.",
+            "Functional requirements answer the question, \u201cwhat does the system do?\u201d Non-functional requirements answer, \u201chow should it behave under pressure?\u201d An API can be correct but still unusable if latency is poor, availability is fragile, or writes are inconsistent.",
+            "That is why a strong architect begins by clarifying scope and constraints before drawing components. It is the difference between building a diagram and designing a real system."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Product prompt] --> B[Functional requirements]\nA --> C[Non-functional goals]\nB --> D[Core features]\nC --> E[Latency, durability, scale]\nD --> F[Architecture choices]\nE --> F"
+            }
+          ],
+          "codeBlocks": [
+            "Example requirement breakdown\n\nFunctional:\n- users can create posts\n- users can read timelines\n- users can follow others\n\nNon-functional:\n- p95 read latency < 200 ms\n- data retention for 2 years\n- 99.9% availability\n- eventual consistency for feed updates is acceptable"
+          ]
+        },
+        {
+          "id": "estimation",
+          "label": "Lesson 3",
+          "title": "Back-of-the-envelope estimation",
+          "intro": "System design is not only about diagrams. It is about converting rough assumptions into numbers that help you pick the right storage, serving layer, and traffic strategy.",
+          "list": [
+            "Estimate daily active users and requests per second.",
+            "Calculate write volume and storage growth.",
+            "Model read-heavy vs write-heavy workloads.",
+            "Use numbers to justify architecture, not to chase precision."
+          ],
+          "paragraphs": [
+            "Back-of-the-envelope estimation is a communication skill. It turns vague product ideas into credible architecture decisions. If a system expects 100,000 writes per second, then the storage layer, network plan, and queue design all change.",
+            "A strong estimate is not perfect, but it should be explainable. You can say: \u201cAssume 1 million daily active users, 2 reads per session, average payload 2 KB, and 20% write traffic. That means approximately X requests per second and Y storage growth per month.\u201d That is where design confidence starts.",
+            "This lesson is about reducing uncertainty. The result is not a spreadsheet answer but a better mental model for discussing what the system must handle."
+          ],
+          "codeBlocks": [
+            "# Example estimation for a social feed\nDAU = 10 million\nReads per user per day = 30\nWrites per user per day = 2\nAverage post size = 2 KB\n\nTotal reads/day = 300M\nTotal writes/day = 20M\nStorage/year = 20M * 2KB * 365 ~= 14.6 TB (before compression and redundancy)"
+          ]
+        },
+        {
+          "id": "framework",
+          "label": "Lesson 4",
+          "title": "A framework for system design interviews",
+          "intro": "A repeatable framework keeps large, open-ended problems manageable. You do not need a perfect design on the first pass; you need a structured design process that makes sense to the interviewer.",
+          "list": [
+            "Clarify problem scope and product assumptions.",
+            "Capture functional and non-functional requirements.",
+            "Estimate traffic and data volume.",
+            "Choose a high-level architecture.",
+            "Identify bottlenecks and propose iterative improvements."
+          ],
+          "paragraphs": [
+            "The interview answer should feel organized. Start by clarifying the problem, then define constraints, then move into architecture. After that, explain trade-offs and what would change under heavier load.",
+            "A common weakness is starting with a giant component list instead of first understanding the user flow. The better flow is: service boundaries, data movement, storage decisions, read/write optimization, and failure handling.",
+            "This lesson gives you a mental checklist you can reuse across URL shorteners, notification systems, file platforms, chat apps, or search engines."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Understand problem] --> B[Scope requirements]\nB --> C[Estimate load]\nC --> D[Define architecture]\nD --> E[Find bottlenecks]\nE --> F[Improve the design]\nF --> G[Explain trade-offs]"
+            }
+          ],
+          "codeBlocks": [
+            "Design checklist\n1. Clarify requirements\n2. Define traffic and storage\n3. Choose key services\n4. Decide on databases and caching\n5. Model read/write flows\n6. Discuss failures, scaling, and trade-offs"
+          ]
+        },
+        {
+          "id": "storage-and-data-models",
+          "label": "Lesson 5",
+          "title": "Storage, schema design, and the data model",
+          "intro": "Storage decisions shape the entire system. A database is not just a place to store rows\u2014it defines access patterns, write cost, consistency, and operational complexity.",
+          "list": [
+            "SQL is strong for relational data, joins, and transactional correctness.",
+            "NoSQL is often better when scalability and flexible schemas dominate the design.",
+            "Object storage is ideal for large files and media assets.",
+            "The database choice should follow the workload, not the hype."
+          ],
+          "paragraphs": [
+            "A relational database is a good fit when you have strong relationships, predictable queries, and a need for transactions. A document or key-value store can be better when the data is high-volume, semi-structured, or write-heavy.",
+            "The architecture of a feed, a search index, a chat history table, and a file storage system are all different. Each product has its own access pattern and therefore its own storage design.",
+            "This lesson is about making the right trade-off. The right storage design reduces complexity and helps the system behave predictably under load."
+          ],
+          "codeBlocks": [
+            "-- User table\nCREATE TABLE users (\n  id BIGINT PRIMARY KEY,\n  name TEXT NOT NULL,\n  created_at TIMESTAMP NOT NULL\n);\n\n-- Follower relationship\nCREATE TABLE follows (\n  follower_id BIGINT,\n  followee_id BIGINT,\n  PRIMARY KEY (follower_id, followee_id)\n);\n\n-- Feed post table\nCREATE TABLE posts (\n  id BIGINT PRIMARY KEY,\n  user_id BIGINT,\n  content TEXT,\n  created_at TIMESTAMP\n);"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "erDiagram\nUSER ||--o{ POST : creates\nUSER ||--o{ FOLLOW : follows\nPOST }o--|| USER : authored"
+            }
+          ]
+        },
+        {
+          "id": "caching-and-performance",
+          "label": "Lesson 6",
+          "title": "Caching, read optimization, and invalidation",
+          "intro": "Caching is one of the most practical ways to reduce latency and database load. But cached data introduces correctness problems if invalidation and freshness are poorly managed.",
+          "list": [
+            "Cache hot reads close to the application layer.",
+            "Use CDNs for static assets and media.",
+            "Apply TTLs, cache-aside patterns, and write-through strategies carefully.",
+            "Weak invalidation logic creates stale data and broken product behavior."
+          ],
+          "paragraphs": [
+            "A cache works because repeated reads are expensive. If the same product data is requested thousands of times per second, a cache can reduce load by serving the result from memory instead of querying the database again.",
+            "The complexity is in invalidation. If a user updates a profile, the cache may still hold old data. The design must decide whether stale data is acceptable, how quickly it should refresh, and when writes must invalidate prior reads.",
+            "This lesson teaches that optimization must respect correctness. The fastest design is not the best design if it produces stale, inconsistent, or confusing responses."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Request] --> B{Cache hit?}\nB -->|Yes| C[Serve fast]\nB -->|No| D[Read DB]\nD --> E[Write cache]\nE --> F[Return response]"
+            }
+          ],
+          "codeBlocks": [
+            "# Cache-aside pattern\nvalue = cache.get(key)\nif value is None:\n    value = db.get(key)\n    cache.set(key, value, ttl=60)\nreturn value\n\n# On write:\nupdate_db(key, new_value)\ncache.delete(key) # invalidate stale data"
+          ]
+        },
+        {
+          "id": "consistency-cap",
+          "label": "Lesson 7",
+          "title": "Consistency models, CAP, and distributed trade-offs",
+          "intro": "Distributed systems cannot maximize every property at once. A strong architecture chooses the right consistency and availability model for the business problem.",
+          "list": [
+            "Consistency defines how fresh reads are after a write.",
+            "Availability measures how often the system keeps serving traffic during failures.",
+            "Partition tolerance is a reality in distributed systems, even when we prefer not to think about it.",
+            "CAP helps explain why systems often choose a trade-off instead of trying to have everything."
+          ],
+          "paragraphs": [
+            "CAP is a conceptual model, not a magical law. It reminds us that when a network partition happens, a distributed system must choose between strong consistency and continued availability for some operations.",
+            "That trade-off depends on the product. A payments system may prefer strong consistency. A feed or social timeline may be okay with eventual consistency if the UX remains acceptable. The key is not to pretend the trade-off does not exist.",
+            "This lesson teaches you to explain the choice in business terms: what users experience, what risks are tolerated, and what costs each model imposes."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TB\nA[Distributed system] --> B[Consistency]\nA --> C[Availability]\nA --> D[Partition tolerance]\nB --> E[Strong guarantees]\nC --> F[Keep serving users]\nD --> G[Network failure is inevitable]"
+            }
+          ],
+          "codeBlocks": [
+            "Strong consistency example\n- bank transfer updates account balances atomically\n- read-after-write guarantees matter\n\nEventual consistency example\n- social feed may show latest posts slightly delayed\n- users still get a useful experience without downtime"
+          ]
+        },
+        {
+          "id": "routing-and-distribution-patterns",
+          "label": "Lesson 8",
+          "title": "Distributed patterns: rate limiting, hashing, IDs, and URL shorteners",
+          "intro": "Many classic interview problems are really exercises in routing, partitioning, and safe scalability. They appear again and again because they teach fundamental design skills.",
+          "list": [
+            "Rate limiting protects backend services from abuse and spikes.",
+            "Consistent hashing reduces rebalancing when nodes are added or removed.",
+            "Unique ID generation must avoid collisions and coordination bottlenecks.",
+            "A URL shortener is a compact system design challenge that combines storage, redirect logic, and scale concerns."
+          ],
+          "paragraphs": [
+            "Rate limiting is a service boundary problem. It decides whether one user, one tenant, or one API consumer is allowed to generate too much traffic. It protects downstream systems and keeps user experience fair and predictable.",
+            "Consistent hashing matters when data is distributed across many machines. It gives a predictable mapping between keys and nodes, which is critical for partitioned stores and large-scale service topologies.",
+            "IDs may seem simple, but at scale they are a distributed coordination problem. A good design uses a clearly defined generation strategy and avoids collisions, sequencing issues, and application-level surprises."
+          ],
+          "codeBlocks": [
+            "# Rate limiter idea\nif requests_per_minute(user_id) > limit:\n    reject_with_429()\nelse:\n    allow_request()\n\n# Consistent hash example\nnode_ring = [n1, n2, n3, n4]\nkey_hash = hash(user_id)\nroute_to_nearest_node(key_hash, node_ring)\n\n# Short URL: id -> long_url mapping\nshort_code = encode(id)\nredirect(short_code) -> original_url"
+          ]
+        },
+        {
+          "id": "feed-chat-search-and-storage",
+          "label": "Lesson 9",
+          "title": "Feeds, chat, search, and product-scale systems",
+          "intro": "The most valuable system design problems are the ones that feel like real products: feeds, notifications, chat, search, and file services. These systems combine the building blocks from earlier lessons into something realistic.",
+          "list": [
+            "Feeds mix read-heavy access patterns with write-heavy updates.",
+            "Notifications often rely on asynchronous workers and retry-safe delivery.",
+            "Chat systems require low latency, ordering, durable history, and reliable message delivery.",
+            "Search requires indexing, ranking, and low-latency retrieval from large data sets."
+          ],
+          "paragraphs": [
+            "Feeds are a classic example of the difference between synchronous and asynchronous work. Users expect the timeline to be fast, but generating it for millions of users often requires batching, fan-out, and background processing.",
+            "Search and chat systems show the same truth in another way: a product is only as good as the architecture behind it. Success depends on indexing, latency, resilience, and ability to handle concurrent readers and writers.",
+            "This lesson is where theory becomes product intuition. You begin to see that architecture is not a collection of unrelated patterns\u2014it is a consistent way of thinking about workload, data flow, and system behavior."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[User action] --> B[Write service]\nB --> C[Queue]\nC --> D[Fan-out workers]\nD --> E[Feed cache]\nA --> F[Read API]\nF --> G[Timeline store]"
+            }
+          ],
+          "codeBlocks": [
+            "# Feed update flow\ncreate_post(user, content)\n  -> write to posts table\n  -> enqueue feed update job\n  -> fan-out to followers\n  -> cache latest timeline entries\n\n# Chat flow\nmessage sent\n  -> push to message queue\n  -> persist to chat store\n  -> send to recipient sessions\n  -> update delivery state"
+          ]
+        },
+        {
+          "id": "system-design-practice",
+          "label": "Practice",
+          "title": "Capstone: architect a realistic product end to end",
+          "intro": "Now bring everything together. Your job is not to produce one perfect answer, but to show a strong design process that can handle ambiguity, scale, and trade-offs with clarity.",
+          "challenge": "Design a platform that supports a large user base, stores user-generated content, handles media uploads, and preserves low-latency reads while remaining resilient during partial outages and traffic spikes.",
+          "paragraphs": [
+            "This capstone is where the course becomes practical. You should be able to discuss the product flow, estimate the scale, choose the right services, identify bottlenecks, and explain why your architecture stays maintainable under growth.",
+            "A strong final answer is not the longest one. It is the one that is structured, explicit about assumptions, honest about trade-offs, and clear about what would change when the product grows further."
+          ],
+          "codeBlocks": [
+            "Capstone answer structure\n1. Clarify scope and constraints\n2. Estimate traffic and storage\n3. Choose key services\n4. Define API and data flows\n5. Explain caching and consistency\n6. Discuss failures, scaling, and trade-offs"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -481,8 +481,8 @@ h2 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
 }
 
 .feature-courses {
@@ -578,10 +578,10 @@ h2 {
 
 .notify-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
   gap: 1.5rem;
   align-items: center;
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(14, 165, 233, 0.06));
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.07), rgba(14, 165, 233, 0.07));
   border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: 1.8rem;
   padding: 1.8rem;
@@ -1078,7 +1078,7 @@ textarea[id^="sqlEditor-"] {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.96));
   border: 1px solid rgba(148, 163, 184, 0.17);
   border-radius: 1.2rem;
-  padding: 1.2rem 1rem;
+  padding: 1.25rem 1.1rem;
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -1252,14 +1252,37 @@ textarea[id^="sqlEditor-"] {
   color: var(--text-soft);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .hero-grid,
   .split,
-  .metrics,
-  .testimonial-grid,
   .contact-grid,
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .notify-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .cards,
+  .feature-courses,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-list {
@@ -1306,22 +1329,140 @@ textarea[id^="sqlEditor-"] {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
+  .topbar {
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .nav {
+    min-height: 70px;
+    gap: 0.75rem;
+  }
+
+  .brand-word {
+    font-size: 0.95rem;
+  }
+
   .hero {
-    padding-top: 3.2rem;
+    padding: 3rem 0 2rem;
+  }
+
+  .hero-grid {
+    gap: 1.4rem;
+  }
+
+  .hero-copy {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .nav-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trust-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .trust-pill {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hero-visual {
+    padding: 0.5rem 0;
+  }
+
+  .panel-content {
+    padding: 1rem;
+  }
+
+  .float-card {
+    position: static;
+    margin-top: 1rem;
+    width: fit-content;
   }
 
   .section-head {
     text-align: left;
   }
 
+  .section-head p {
+    font-size: 0.96rem;
+  }
+
+  .metrics,
+  .testimonial-grid,
+  .cards,
+  .feature-courses,
+  .notify-form {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card,
+  .quote-card,
+  .metric,
+  .card {
+    border-radius: 1.15rem;
+  }
+
+  .course-price-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .course-price-row strong {
+    font-size: 1.45rem;
+  }
+
+  .notify-card {
+    padding: 1.2rem;
+  }
+
+  .notify-form button {
+    width: 100%;
+  }
+
   .cta-box {
     padding: 1.4rem;
   }
+}
 
-  .float-card {
-    position: static;
-    margin-top: 1rem;
+@media (max-width: 600px) {
+  h1 {
+    font-size: clamp(2.2rem, 11vw, 3.1rem);
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  .course-badge {
+    top: 0.8rem;
+    right: 0.8rem;
+    font-size: 0.62rem;
+  }
+
+  .icon-box {
+    width: 2.7rem;
+    height: 2.7rem;
+    font-size: 1.2rem;
   }
 
   .course-sidebar,
