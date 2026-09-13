@@ -116,6 +116,87 @@ function normalizeCourses(data) {
   return Array.isArray(data?.courses) ? data.courses : [];
 }
 
+const SEO_SITE_ORIGIN = 'https://heavyengineers.github.io';
+
+function setMetaContent(selector, value) {
+  let meta = document.querySelector(selector);
+  if (!meta) {
+    meta = document.head.appendChild(document.createElement('meta'));
+    const selectorMatch = selector.match(/meta\[(name|property)="([^"]+)"\]/);
+    if (selectorMatch) meta.setAttribute(selectorMatch[1], selectorMatch[2]);
+  }
+  meta.setAttribute('content', value);
+  return meta;
+}
+
+function updateCourseSeo(course, section, sectionIndex) {
+  const title = section ? `${section.title} | ${course.title} | Heavy Engineers` : `${course.title} | Heavy Engineers`;
+  const description = section?.intro || course.description || 'Practical, free technical lessons from Heavy Engineers.';
+  const canonicalParams = new URLSearchParams({ course: course.slug });
+  if (section) canonicalParams.set('section', getSectionKey(section));
+  const canonical = `${SEO_SITE_ORIGIN}/course.html?${canonicalParams.toString()}`;
+  const image = `${SEO_SITE_ORIGIN}/assets/favicon.svg`;
+
+  document.title = title;
+  setMetaContent('meta[name="description"]', description);
+  setMetaContent('meta[property="og:title"]', title);
+  setMetaContent('meta[property="og:description"]', description);
+  setMetaContent('meta[property="og:url"]', canonical);
+  setMetaContent('meta[property="og:image"]', image);
+  setMetaContent('meta[name="twitter:title"]', title);
+  setMetaContent('meta[name="twitter:description"]', description);
+  setMetaContent('meta[name="twitter:image"]', image);
+  const canonicalLink = document.querySelector('link[rel="canonical"]') || document.head.appendChild(document.createElement('link'));
+  canonicalLink.setAttribute('rel', 'canonical');
+  canonicalLink.setAttribute('href', canonical);
+
+  document.querySelector('[data-seo-course-jsonld]')?.remove();
+  const structuredData = document.createElement('script');
+  structuredData.type = 'application/ld+json';
+  structuredData.dataset.seoCourseJsonld = 'true';
+  structuredData.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: course.title,
+    description: course.description,
+    url: `${SEO_SITE_ORIGIN}/course.html?course=${encodeURIComponent(course.slug)}`,
+    provider: {
+      '@type': 'Organization',
+      name: 'Heavy Engineers',
+      url: `${SEO_SITE_ORIGIN}/`
+    },
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      url: canonical
+    },
+    ...(section ? {
+      subjectOf: {
+        '@type': 'LearningResource',
+        name: section.title,
+        description
+      }
+    } : {})
+  });
+  document.head.appendChild(structuredData);
+
+  document.querySelector('[data-seo-breadcrumb-jsonld]')?.remove();
+  const breadcrumbData = document.createElement('script');
+  breadcrumbData.type = 'application/ld+json';
+  breadcrumbData.dataset.seoBreadcrumbJsonld = 'true';
+  breadcrumbData.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SEO_SITE_ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SEO_SITE_ORIGIN}/courses.html` },
+      { '@type': 'ListItem', position: 3, name: course.title, item: `${SEO_SITE_ORIGIN}/course.html?course=${encodeURIComponent(course.slug)}` },
+      ...(section ? [{ '@type': 'ListItem', position: 4, name: section.title, item: canonical }] : [])
+    ]
+  });
+  document.head.appendChild(breadcrumbData);
+}
+
 function renderCourseCard(course) {
   const isUpcoming = isUpcomingCourse(course);
   const href = isUpcoming ? '#' : (course.path || `course.html?course=${encodeURIComponent(course.slug)}`);
@@ -146,7 +227,7 @@ async function renderCourseGrid(targetSelector, options = {}) {
   if (!target) return;
 
   try {
-    const response = await fetch('courses-data.json?v=16');
+    const response = await fetch('courses-data.json?v=18');
     const data = await response.json();
     const courses = normalizeCourses(data);
     const visibleCourses = options.onlyUpcoming
@@ -1642,7 +1723,7 @@ async function renderGenericCoursePage() {
   }
 
   try {
-    const response = await fetch('courses-data.json?v=16');
+    const response = await fetch('courses-data.json?v=18');
     const data = await response.json();
     const courses = normalizeCourses(data);
     const params = new URLSearchParams(window.location.search);
@@ -1657,24 +1738,12 @@ async function renderGenericCoursePage() {
 
     courseBadge.textContent = course.badge || 'Free';
     courseName.textContent = course.title || 'Course';
-    const activeDescription = course.description || 'Practical, free technical lessons from Heavy Engineers.';
-    document.title = selectedSectionKey
-      ? `${course.sections.find((section) => getSectionKey(section) === selectedSectionKey)?.title || course.title} | ${course.title} | Heavy Engineers`
-      : `${course.title} | Heavy Engineers`;
-
-    const descriptionMeta = document.querySelector('meta[name="description"]') || document.head.appendChild(document.createElement('meta'));
-    descriptionMeta.setAttribute('name', 'description');
-    descriptionMeta.setAttribute('content', activeDescription);
-
-    const canonicalLink = document.querySelector('link[rel="canonical"]') || document.head.appendChild(document.createElement('link'));
-    canonicalLink.setAttribute('rel', 'canonical');
-    canonicalLink.setAttribute('href', `${window.location.origin}${window.location.pathname}${window.location.search}`);
-
     const activeSection = selectedSectionKey
       ? course.sections.find((section) => getSectionKey(section) === selectedSectionKey)
       : null;
     const visibleSection = activeSection || course.sections[0];
     const visibleIndex = course.sections.findIndex((section) => getSectionKey(section) === getSectionKey(visibleSection));
+    updateCourseSeo(course, activeSection, visibleIndex);
 
     courseNav.innerHTML = course.sections.map((section, index) => {
       const sectionKey = getSectionKey(section);
