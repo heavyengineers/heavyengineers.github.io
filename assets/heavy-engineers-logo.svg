@@ -1,4 +1,4 @@
-<svg width="260" height="56" viewBox="0 0 260 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heavy Engineers logo">
+<svg width="360" height="60" viewBox="0 0 360 60" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Heavy Engineers logo">
   <defs>
     <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#7C3AED"/>
@@ -6,9 +6,9 @@
     </linearGradient>
   </defs>
 
-  <rect x="0" y="2" width="52" height="52" rx="15" fill="url(#g1)"/>
-  <path d="M13 38.5V17.5H20.5V31.5H28V17.5H35.5V38.5H13Z" fill="white"/>
-  <path d="M39 38.5V17.5H46.5V38.5H39Z" fill="white"/>
+  <rect x="2" y="4" width="48" height="48" rx="14" fill="url(#g1)"/>
+  <path d="M14 39V18H20.5V31.5H27.5V18H34V39H14Z" fill="white"/>
+  <path d="M38 39V18H44.5V39H38Z" fill="white"/>
 
-  <text x="68" y="35" fill="#4C1D95" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" letter-spacing="1.6">HEAVY ENGINEERS</text>
+  <text x="70" y="37" fill="#4C1D95" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" letter-spacing="1.2">HEAVY ENGINEERS</text>
 </svg>

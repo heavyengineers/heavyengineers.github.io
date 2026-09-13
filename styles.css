@@ -84,6 +84,7 @@ button {
   display: block;
   height: 42px;
   width: auto;
+  max-width: 290px;
 }
 
 .nav-links {
