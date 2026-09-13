@@ -797,6 +797,22 @@
       "status": "upcoming",
       "isUpcoming": true,
       "sections": []
+    },
+    {
+      "slug": "system-design-interview-blueprint",
+      "title": "System Design Interview Blueprint",
+      "badge": "Upcoming",
+      "badgeStyle": "",
+      "icon": "\ud83c\udfd7\ufe0f",
+      "description": "A practical system-design roadmap inspired by Alex Xu's System Design Interview: An Insider's Guide, covering scalability, estimation, API design, distributed systems, and interview-ready architecture thinking.",
+      "meta": [
+        "System design",
+        "Interview prep"
+      ],
+      "path": "#",
+      "status": "upcoming",
+      "isUpcoming": true,
+      "sections": []
     }
   ]
 }
