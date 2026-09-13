@@ -1,23 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Team Heavy Engineers</title>
-  <link rel="stylesheet" href="/assets/index.5e67a136.css">
-</head>
-<body>
-    <header class="flex h-20 bg-violet-200 justify-between items-center px-20">
-        <a href="/" class=" font-bold text-violet-900 antialiased tracking-wide">Heavy Engineers</a>
-        <ul class="flex ">
-            <li><a class="list-none px-4 hover:text-black text-blue-600" href="/">Home</a></li>
-            <li><a class="list-none px-4 hover:text-black text-blue-600" href="/courses">Courses</a></li>
-            <li><a class="list-none px-4 hover:text-black text-blue-600" href="/contact">PDF Notes</a></li>
-            <li><a class="list-none px-4 hover:text-black text-blue-600" href="/about">About</a></li>
-            <li><a class="list-none px-4 hover:text-black text-blue-600" href="/contact">Contact</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Heavy Engineers helps students and professionals build engineering skills through structured courses, notes, and practical learning experiences."
+    />
+    <title>Heavy Engineers | Engineering Learning Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#home" class="brand" aria-label="Heavy Engineers home">
+          <span class="brand-mark">HE</span>
+          Heavy Engineers
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="notes.html">Resources</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="nav-cta">Join Now</a>
+      </div>
     </header>
-</body>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <span class="kicker">Build your engineering edge</span>
+            <h1>Learn smarter. Practice harder. Become job-ready.</h1>
+            <p class="hero-copy">
+              Heavy Engineers brings together structured engineering courses, concise PDF
+              notes, hands-on problem solving, and mentoring support to help students and
+              professionals grow with confidence.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-btn" href="courses.html">Explore Courses</a>
+              <a class="secondary-btn" href="notes.html">View Resources</a>
+            </div>
+
+            <div class="trust-row" aria-label="Trust indicators">
+              <span class="trust-pill"><span class="trust-dot"></span> 10k+ learners</span>
+              <span class="trust-pill"><span class="trust-dot"></span> 4.9/5 rating</span>
+              <span class="trust-pill"><span class="trust-dot"></span> Practical focus</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Program overview">
+            <div class="panel">
+              <div class="panel-content">
+                <div class="hero-card">
+                  <h3>Current learning path</h3>
+                  <div class="course-mini">
+                    <div>
+                      <strong>Core Engineering Mastery</strong>
+                      <span>Live sessions • assignments • mentorship</span>
+                    </div>
+                    <div>
+                      <strong>78%</strong>
+                      <span>completed</span>
+                    </div>
+                  </div>
+                  <div class="progress" aria-label="Learning progress">
+                    <div class="progress-bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-card">
+              <strong>120+</strong>
+              <span>Study modules</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <span class="section-label">Impact</span>
+            <h2>Trusted by students who want measurable growth.</h2>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <strong>10k+</strong>
+              <span>Active learners</span>
+            </div>
+            <div class="metric">
+              <strong>35+</strong>
+              <span>Expert-led courses</span>
+            </div>
+            <div class="metric">
+              <strong>90%</strong>
+              <span>Course completion</span>
+            </div>
+            <div class="metric">
+              <strong>4.9/5</strong>
+              <span>Average feedback</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="courses">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-label">Courses</span>
+            <h2>Structured learning paths for every stage.</h2>
+            <p>From foundational concepts to interview-level preparation, we help you move forward with clarity.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <div class="icon-box">⚙️</div>
+              <h3>Engineering Foundations</h3>
+              <p>Core principles, problem-solving frameworks, and foundational theory for students starting out.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">📐</div>
+              <h3>Design &amp; Analysis</h3>
+              <p>Learn application-driven engineering methods with visual explanations and practice sets.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon-box">🚀</div>
+              <h3>Career Preparation</h3>
+              <p>Interview readiness, resume strategies, and high-impact learning habits to stand out.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources">
+        <div class="container split">
+          <div class="info-panel">
+            <span class="section-label">Why learn with us</span>
+            <h2>Clear guidance, strong fundamentals, and practical support.</h2>
+            <ul>
+              <li><span class="check">✓</span> Short, exam-friendly notes that make revision easier</li>
+              <li><span class="check">✓</span> Step-by-step learning plans built for discipline and consistency</li>
+              <li><span class="check">✓</span> Mentorship and feedback that keeps your momentum high</li>
+            </ul>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <strong>PDF Notes</strong>
+              <span>Well-organized summaries for quick revision and deeper understanding.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Practice Sets</strong>
+              <span>Targeted exercises to improve speed, accuracy, and confidence.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Mentoring</strong>
+              <span>Supportive guidance to help you stay focused and accountable.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Project Learning</strong>
+              <span>Apply knowledge in realistic scenarios and build practical skills.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container split">
+          <div>
+            <span class="section-label">About us</span>
+            <h2>We help ambitious learners build strong technical foundations.</h2>
+            <p class="hero-copy">
+              Heavy Engineers was created to make engineering learning more accessible,
+              structured, and outcome-focused. We combine clarity, discipline, and practical
+              experience so learners can build skills that last beyond the classroom.
+            </p>
+          </div>
+
+          <div class="info-panel">
+            <span class="section-label">Our promise</span>
+            <h3>Simple, consistent, and effective learning experiences.</h3>
+            <p class="hero-copy">
+              Every resource is designed to reduce confusion, strengthen fundamentals, and turn
+              learning into action.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="contact">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <span class="section-label" style="color: #c4b5fd;">Start today</span>
+              <h2>Ready to level up your engineering journey?</h2>
+              <p>Explore courses, access resources, and connect with a learning community built for growth.</p>
+            </div>
+            <a class="primary-btn" href="mailto:hello@heavyengineers.com">Get in touch</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <div>
+          <strong>Heavy Engineers</strong>
+          <div>© <span id="year"></span> All rights reserved.</div>
+        </div>
+
+        <div class="socials" aria-label="Social links">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
