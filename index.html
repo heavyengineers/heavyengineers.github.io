@@ -71,17 +71,17 @@
       <section class="hero" id="home">
         <div class="container hero-grid">
           <div>
-            <span class="kicker">Build your engineering edge</span>
-            <h1>Learn smarter. Practice harder. Become job-ready.</h1>
+            <span class="kicker">Free learning for everyone</span>
+            <h1>Learn web skills with practical, free tutorials.</h1>
             <p class="hero-copy">
-              Heavy Engineers brings together structured engineering courses, concise PDF
-              notes, hands-on problem solving, and mentoring support to help students and
-              professionals grow with confidence.
+              Heavy Engineers is building a simple learning platform for curious learners who want
+              free, beginner-friendly courses, well-structured notes, and hands-on examples that are
+              easy to follow from day one.
             </p>
 
             <div class="hero-actions">
-              <a class="primary-btn" href="courses.html">Explore Courses</a>
-              <a class="secondary-btn" href="notes.html">View Resources</a>
+              <a class="primary-btn" href="courses.html">Browse free courses</a>
+              <a class="secondary-btn" href="notes.html">View resources</a>
             </div>
 
             <div class="trust-row" aria-label="Trust indicators">
@@ -187,56 +187,57 @@
       <section id="courses">
         <div class="container">
           <div class="section-head">
-            <span class="section-label">Featured courses</span>
-            <h2>Structured learning paths that actually move you forward.</h2>
-            <p>Built for students and professionals who want clear systems, practical learning, and a path to visible progress.</p>
+            <span class="section-label">Free course library</span>
+            <h2>Start learning from beginner-friendly tutorials, no paywall.</h2>
+            <p>Built for learners who want clear explanations, practical examples, and free access to the fundamentals of web development.</p>
           </div>
 
-          <div class="cards feature-courses">
-            <article class="card course-card">
-              <div class="course-badge">Most popular</div>
-              <div class="icon-box">⚙️</div>
-              <h3>Engineering Foundations</h3>
-              <p>Answer the question “where do I begin?” with a structured, step-by-step foundation for engineering understanding.</p>
-              <div class="course-meta">
-                <span>6 weeks</span>
-                <span>Beginner</span>
-              </div>
-              <div class="course-price-row">
-                <strong>₹2,999</strong>
-                <a class="secondary-btn small-btn" href="contact.html">Enroll now</a>
-              </div>
-            </article>
+          <div id="featured-course-list" class="cards feature-courses"></div>
+        </div>
+      </section>
 
-            <article class="card course-card">
-              <div class="course-badge alt-badge">Best value</div>
-              <div class="icon-box">📐</div>
-              <h3>Problem Solving Mastery</h3>
-              <p>Learn how to break down complex questions into strong reasoning frameworks and confident solutions.</p>
-              <div class="course-meta">
-                <span>8 weeks</span>
-                <span>Intermediate</span>
-              </div>
-              <div class="course-price-row">
-                <strong>₹4,499</strong>
-                <a class="secondary-btn small-btn" href="contact.html">Enroll now</a>
-              </div>
-            </article>
+      <section id="upcoming-courses">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-label">Upcoming courses</span>
+            <h2>More practical learning tracks are coming soon.</h2>
+            <p>We are expanding the platform with deeper frontend, design, and engineering-focused paths for learners who want to keep growing.</p>
+          </div>
 
-            <article class="card course-card">
-              <div class="course-badge alt-badge">Career ready</div>
-              <div class="icon-box">🚀</div>
-              <h3>Career Launch Kit</h3>
-              <p>Get a clear route to interview confidence, better preparation, and practical growth in your chosen path.</p>
-              <div class="course-meta">
-                <span>4 weeks</span>
-                <span>Career</span>
-              </div>
-              <div class="course-price-row">
-                <strong>₹3,799</strong>
-                <a class="secondary-btn small-btn" href="contact.html">Enroll now</a>
-              </div>
-            </article>
+          <div id="upcoming-course-list" class="cards feature-courses"></div>
+        </div>
+      </section>
+
+      <section id="notify-me" class="notify-section">
+        <div class="container">
+          <div class="notify-card">
+            <div>
+              <span class="section-label">Stay informed</span>
+              <h2>Get notified when a new course launches.</h2>
+              <p>Join the waitlist for upcoming releases and we will keep you posted when the course goes live.</p>
+            </div>
+
+            <form id="notify-form" class="notify-form">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                <span>Course</span>
+                <select name="course" id="notify-course" required>
+                  <option value="">Select a course</option>
+                  <option value="CSS Mastery">CSS Mastery</option>
+                  <option value="JavaScript Foundations">JavaScript Foundations</option>
+                  <option value="React for Product Builders">React for Product Builders</option>
+                </select>
+              </label>
+              <button type="submit" class="primary-btn">Notify me</button>
+            </form>
+            <p id="notify-status" class="notify-status" aria-live="polite"></p>
           </div>
         </div>
       </section>

@@ -1,0 +1,802 @@
+{
+  "courses": [
+    {
+      "slug": "zero-to-one",
+      "title": "0 \u2192 1 Starter",
+      "badge": "Free",
+      "badgeStyle": "",
+      "icon": "\ud83d\ude80",
+      "description": "Start from zero and build a simple web foundation step by step.",
+      "meta": [
+        "Beginner",
+        "Minimal"
+      ],
+      "path": "course.html?course=zero-to-one",
+      "sections": [
+        {
+          "id": "starter-intro",
+          "label": "Start here",
+          "title": "Learn the first steps of web development.",
+          "intro": "This is a minimal, beginner-first path designed to turn confusion into confidence without overwhelming the learner.",
+          "cards": [
+            {
+              "title": "What you will build",
+              "body": "A simple page with headings, text, links, and layout ideas that mimic the real structure of a website."
+            },
+            {
+              "title": "Why it matters",
+              "body": "Every advanced website begins with the same fundamentals: structure, clear content, and disciplined practice."
+            },
+            {
+              "title": "Your mindset",
+              "body": "Focus on understanding one concept at a time. Clarity beats speed when you are learning new technical tools."
+            }
+          ]
+        },
+        {
+          "id": "starter-html",
+          "label": "Lesson 1",
+          "title": "HTML gives your page structure.",
+          "intro": "HTML creates the skeleton of a page. It tells the browser what content exists and how it should be organized.",
+          "list": [
+            "Headings explain the structure and importance of content.",
+            "Paragraphs hold readable information and explanation blocks.",
+            "Links let users move between pages and resources.",
+            "Lists make ideas easier to scan and revisit."
+          ],
+          "codeBlocks": [
+            "<h1>Welcome to Heavy Engineers</h1>\n<p>Build your basics with clarity and consistency.</p>\n<a href=\"https://heavyengineers.github.io/\">Visit the website</a>"
+          ]
+        },
+        {
+          "id": "starter-css",
+          "label": "Lesson 2",
+          "title": "CSS makes the page feel polished.",
+          "intro": "Cascading Style Sheets bring color, spacing, alignment, and visual hierarchy to your content.",
+          "list": [
+            "Colors communicate mood and focus.",
+            "Spacing creates breathing room and improves readability.",
+            "Fonts and weights help hierarchy feel clear and intentional.",
+            "Responsive layouts keep a page usable on mobile and desktop screens."
+          ],
+          "codeBlocks": [
+            "body {\n  font-family: Arial, sans-serif;\n  background: #f8fafc;\n  color: #0f172a;\n}\n\nh1 {\n  color: #7c3aed;\n  font-size: 2rem;\n}"
+          ]
+        },
+        {
+          "id": "starter-practice",
+          "label": "Practice",
+          "title": "Build one clean and simple webpage.",
+          "intro": "Use the editor below to create your first tiny web page. Try headings, a paragraph, a button, and a link.",
+          "editor": {
+            "type": "html",
+            "label": "HTML playground",
+            "defaultHtml": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>My First Page</title>\n    <style>\n      body { font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; padding: 24px; }\n      .box { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08); }\n      h1 { color: #7c3aed; }\n      a { color: #0ea5e9; text-decoration: none; }\n    </style>\n  </head>\n  <body>\n    <div class=\"box\">\n      <h1>Welcome, learner!</h1>\n      <p>This is your first webpage built with HTML and CSS.</p>\n      <a href=\"https://heavyengineers.github.io/\">Explore Heavy Engineers</a>\n    </div>\n  </body>\n</html>"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "html",
+      "title": "HTML from Zero to Advanced",
+      "badge": "Free",
+      "badgeStyle": "",
+      "icon": "\ud83c\udf10",
+      "description": "A complete HTML journey for curious readers, beginners, and engineering graduates, built to take a learner from raw markup to practical production-ready structure.",
+      "meta": [
+        "Beginner to advanced",
+        "Read & practice"
+      ],
+      "path": "course.html?course=html",
+      "sections": [
+        {
+          "id": "html-intro",
+          "label": "Start here",
+          "title": "HTML is the foundation of every modern website.",
+          "intro": "If you are new to the web, this course is your complete HTML journey. We will move from the first tag to semantic architecture, accessibility, forms, media, and real-world page composition used in serious product teams.",
+          "cards": [
+            {
+              "title": "Who is this for?",
+              "body": "Readers, curious learners, engineering graduates, and anyone who wants to understand how websites truly work from the markup layer upward."
+            },
+            {
+              "title": "What you will build",
+              "body": "By the end, you will understand how to write clean HTML for blogs, forms, dashboards, landing pages, and reusable content blocks."
+            },
+            {
+              "title": "Why this matters",
+              "body": "Strong HTML is the difference between a page that looks okay and a page that is accessible, scalable, maintainable, and easy to extend."
+            }
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Reader starts here] --> B[Learn HTML basics]\nB --> C[Structure content]\nC --> D[Build forms and layouts]\nD --> E[Ship accessible, real pages]"
+            }
+          ],
+          "paragraphs": [
+            "This course is designed for people who do not just want to memorize tags, but want to understand why those tags exist and how they shape real experiences. A beautiful webpage is not only about design. It begins with clear content structure, accessible labels, and dependable semantics.",
+            "HTML is the skeleton of the web. It decides what information exists, what order it appears in, and how a browser interprets meaning. Without good HTML, CSS has very little context to work with, and JavaScript cannot reliably interact with a page that was not built with intention.",
+            "From a learner's perspective, the goal is simple: learn to read the structure, write it clearly, and build confidence through repetition. From a teacher's perspective, the challenge is to explain the why behind every tag so that students do not treat markup as random syntax. From a reader's perspective, the result should feel obvious, helpful, and trustworthy when the page loads.",
+            "That is why this course is built for readers and engineers. We want you to understand the reasoning behind each tag and to feel confident writing pages that are readable, maintainable, and production-ready."
+          ]
+        },
+        {
+          "id": "html-basics",
+          "label": "Lesson 1",
+          "title": "HTML basics: documents, tags, and structure.",
+          "intro": "Every webpage begins with a document structure. The browser reads HTML tags and converts them into meaningful content and layout.",
+          "list": [
+            "The <!DOCTYPE html> declaration tells the browser the document type.",
+            "The <html> element is the root of every HTML document.",
+            "The <head> contains metadata, title, and SEO information.",
+            "The <body> contains the actual content users read and interact with.",
+            "A clean HTML document is easier to debug, SEO-friendly, and much easier to extend later.",
+            "Common beginner mistake: writing content without a proper structure, which makes the page harder to read and harder to style."
+          ],
+          "paragraphs": [
+            "The first skill in HTML is understanding the document model. Think of a web page as a structured tree. The browser parses tags and creates a page hierarchy that organizes headings, paragraphs, links, images, and interactive controls.",
+            "The most important idea here is that HTML is not just a random set of text. It is a semantic language. When you write a page, you are telling the browser which pieces of the content are primary headings, which pieces are paragraph text, and which pieces are navigation or form controls. That structure creates meaning, which improves accessibility and makes future CSS and JavaScript easier to apply correctly.",
+            "A good mental model is this: the browser reads your HTML and turns it into a DOM tree, a structured representation of the page. Your job as a developer is to write tags that describe the meaning of the content, not just the look. When you structure the document correctly, the browser, search engines, assistive technologies, and future code all understand the page better.",
+            "If you want to build a strong foundation, begin with a simple HTML document and keep it clean. A well-structured page is easier to debug, easier to scale, and much easier for other developers to maintain."
+          ],
+          "codeBlocks": [
+            "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <title>Heavy Engineers</title>\n  </head>\n  <body>\n    <h1>Learn with clarity</h1>\n    <p>HTML gives structure to the web.</p>\n  </body>\n</html>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Document type] --> B[HTML Root]\nB --> C[Head]\nB --> D[Body]\nC --> E[Title and metadata]\nD --> F[Content like headings, text, links]"
+            }
+          ]
+        },
+        {
+          "id": "html-text",
+          "label": "Lesson 2",
+          "title": "Text content and semantic headings.",
+          "intro": "Readable web pages are built with well-structured text. Headings, paragraphs, emphasis, and quotes help users quickly understand the story of the page.",
+          "list": [
+            "H1 is the primary page heading and should appear once per page.",
+            "H2 and H3 create a content hierarchy and improve readability.",
+            "Strong and em add emphasis without altering meaning.",
+            "Blockquotes and code tags show examples, citations, and technical snippets clearly."
+          ],
+          "paragraphs": [
+            "Once the document structure is in place, the next step is content and hierarchy. A webpage is not just a wall of text. It is a collection of ideas arranged so that readers can scan, understand, and remember the information quickly.",
+            "Headings establish importance. A strong heading hierarchy tells the user where they are and what matters most. The main idea of the page belongs in an h1, while supporting ideas should be grouped under h2 and h3. This also helps assistive technology understand the structure and read content in a meaningful sequence.",
+            "Text styling in HTML is not only cosmetic. Strong emphasis, blockquotes, and code blocks are meaningful markup. They help readers understand hierarchy and intent without changing the content itself. In other words, these elements are as much about communication as they are about appearance.",
+            "A common mistake is to choose heading tags based only on visual size. Good HTML should reflect meaning, not just font appearance. The reader does not care whether you used a larger font manually; they care whether the page clearly communicates what is most important and what comes next."
+          ],
+          "codeBlocks": [
+            "<article>\n  <h1>How to learn HTML effectively</h1>\n  <p>Start with the basics, then build real examples.</p>\n  <h2>Why structure matters</h2>\n  <p><strong>Good structure</strong> makes content easier to read and maintain.</p>\n  <blockquote>Clarity beats complexity.</blockquote>\n</article>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TB\nA[Page idea] --> B[H1 Main title]\nB --> C[H2 Section title]\nC --> D[H3 Supporting detail]\nD --> E[Paragraphs, quotes, emphasis]"
+            }
+          ]
+        },
+        {
+          "id": "html-links-media",
+          "label": "Lesson 3",
+          "title": "Links, images, and media elements.",
+          "intro": "Links connect pages, ideas, and resources. Media elements allow websites to tell richer stories and deliver information in more engaging ways.",
+          "list": [
+            "Anchor tags create navigation and references to other pages or sections.",
+            "Image tags communicate visual context and should include alt text.",
+            "The src attribute loads the media resource, while alt describes it for accessibility.",
+            "Video and audio tags let you embed content directly inside the document."
+          ],
+          "paragraphs": [
+            "Links are the glue of the web. Without them, pages would exist in isolation. An anchor tag can send the user to another page, a section on the same page, or even a different part of the same document. This is the reason navigation systems work the way they do and why readers can move from one concept to the next without confusion.",
+            "Images are equally important. They are not decoration only. They can convey meaning, add visual examples, and clarify a process. However, accessibility matters. Every meaningful image should ideally include alt text. This helps users with assistive technology or slow connections understand what the image is trying to tell them.",
+            "Media elements like video, audio, and figures make a page richer and more practical. When used well, they support explanations instead of overwhelming the reader. Good HTML treats media as supporting evidence, not as noise."
+          ],
+          "codeBlocks": [
+            "<nav>\n  <a href=\"#overview\">Overview</a>\n  <a href=\"https://heavyengineers.github.io/\">Website</a>\n</nav>\n\n<img src=\"images/lesson.png\" alt=\"HTML lesson illustration\" width=\"600\" />\n\n<video controls width=\"640\">\n  <source src=\"course-demo.mp4\" type=\"video/mp4\" />\n</video>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Link to page] --> B[User navigates] \nC[Image with alt text] --> D[Reader understands context]\nE[Video/audio element] --> F[Multimedia explanation]"
+            }
+          ]
+        },
+        {
+          "id": "html-lists-tables",
+          "label": "Lesson 4",
+          "title": "Lists, tables, and meaningful content grouping.",
+          "intro": "Real content often needs grouping. Lists and tables are used when we need to present steps, product features, results, or structured information.",
+          "list": [
+            "Unordered lists are good for a group of ideas without sequence.",
+            "Ordered lists are excellent for step-by-step instructions or process flow.",
+            "Tables work best for information that must be compared row by row.",
+            "A table should still maintain a readable structure and be used only when data is tabular."
+          ],
+          "paragraphs": [
+            "As the amount of information grows, the need for structure becomes more obvious. Lists help organize steps, checklists, feature summaries, and reading paths. Ordered lists help create a sequence of actions, while unordered lists help communicate related ideas without implying a strict order.",
+            "Tables are a different challenge. They are valuable when you need to compare or track values, but they should not be used for layout. A table is a data structure, not a design tool. If the content is not tabular, use sections and divs instead.",
+            "Good grouping makes pages easier to read and much easier to maintain. A learner who can scan the page quickly understands the ideas faster and is more likely to remember the structure and logic behind the content."
+          ],
+          "codeBlocks": [
+            "<h2>Course roadmap</h2>\n<ol>\n  <li>Learn HTML structure</li>\n  <li>Practice semantic tags</li>\n  <li>Build forms and content sections</li>\n</ol>\n\n<table>\n  <thead>\n    <tr><th>Topic</th><th>Focus</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>HTML</td><td>Structure</td></tr>\n    <tr><td>CSS</td><td>Design</td></tr>\n  </tbody>\n</table>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Information] --> B[Ordered list for sequence]\nA --> C[Unordered list for related items]\nA --> D[Table for rows and columns]"
+            }
+          ]
+        },
+        {
+          "id": "html-forms",
+          "label": "Lesson 5",
+          "title": "Forms: inputs, buttons, labels, and real user interaction.",
+          "intro": "Forms are where static pages become interactive tools. They are essential for sign-ups, contact pages, search, feedback collection, and structured user input.",
+          "list": [
+            "Labels improve accessibility and help users understand what field they are filling.",
+            "Input types include text, email, password, number, date, and search.",
+            "Button elements trigger form submission or action events.",
+            "Fieldsets group related inputs together for better structure and readability."
+          ],
+          "paragraphs": [
+            "Forms are one of the most practical parts of HTML because they connect the page to real user interaction. A contact form, search box, registration form, or login page all rely on form elements working together correctly. Without the right fields, labels, and structure, the form becomes confusing and inaccessible.",
+            "A well-designed form is more than a row of inputs. It is a conversation between the user and the system. Labels tell the user what to type, placeholders help guide them, and the correct input types help browsers validate better before the data even reaches the backend.",
+            "This is also a critical place for engineering discipline. A form should be easy to understand, consistent in design, accessible by keyboard, and built with semantics that future developers can maintain. Good forms reduce friction and increase trust."
+          ],
+          "codeBlocks": [
+            "<form>\n  <fieldset>\n    <legend>Student information</legend>\n\n    <label for=\"name\">Name</label>\n    <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"Enter your name\" required />\n\n    <label for=\"email\">Email</label>\n    <input id=\"email\" name=\"email\" type=\"email\" required />\n\n    <button type=\"submit\">Join course</button>\n  </fieldset>\n</form>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "sequenceDiagram\nUser->>Form: Fills name and email\nForm->>Browser: Validates required fields\nBrowser-->>User: Displays friendly feedback\nUser->>Server: Submits data"
+            }
+          ]
+        },
+        {
+          "id": "html-accessibility",
+          "label": "Lesson 6",
+          "title": "Semantic HTML and accessibility for real users.",
+          "intro": "Accessible HTML helps screen readers, keyboard users, and all kinds of users understand your page. Good semantics create a better experience for everyone.",
+          "list": [
+            "header, main, nav, section, article, aside, and footer are semantic landmarks.",
+            "aria-label helps describe interactive elements when plain text is not enough.",
+            "Alt text is required for meaningful images and helpful for screen reader users.",
+            "Using semantic structure improves clarity, SEO, maintainability, and developer collaboration."
+          ],
+          "paragraphs": [
+            "Accessibility is not an extra feature. It is part of good engineering. A page that is structured semantically and labeled correctly works better for keyboard users, screen readers, and users with low bandwidth or visual limitations. It also improves SEO because search engines understand the page structure more clearly.",
+            "Semantic HTML gives meaning to the code itself. Instead of using generic containers everywhere, we use elements that describe the role of the content. A nav tells the browser that this block is navigation, a main block defines the primary content, and an article can represent a stand-alone piece of information.",
+            "When you write semantic HTML, you are not just making pages prettier. You are making them clearer for both browsers and humans. This is one of the strongest engineering habits you can build early in your web journey."
+          ],
+          "codeBlocks": [
+            "<header>\n  <nav aria-label=\"Main navigation\">\n    <a href=\"#home\">Home</a>\n    <a href=\"#about\">About</a>\n  </nav>\n</header>\n\n<main>\n  <section aria-labelledby=\"course-heading\">\n    <h2 id=\"course-heading\">HTML course overview</h2>\n    <p>Learn structure, semantics, and accessible content patterns.</p>\n  </section>\n</main>\n\n<footer>\n  <p>\u00a9 2026 Heavy Engineers</p>\n</footer>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Content] --> B[Header]\nA --> C[Main]\nA --> D[Aside]\nA --> E[Footer]\nB --> F[Navigation]\nC --> G[Primary article or section]"
+            }
+          ]
+        },
+        {
+          "id": "html-layout",
+          "label": "Lesson 7",
+          "title": "Page structure and layout patterns used in real websites.",
+          "intro": "A strong web page is more than just content. It uses structure to create readable, scalable, and maintainable page layouts that feel intentional.",
+          "list": [
+            "header holds branding, nav, and primary actions.",
+            "main contains the primary content of the page.",
+            "aside is useful for related information or side content.",
+            "footer contains utility links, policies, and contact information."
+          ],
+          "paragraphs": [
+            "When developers talk about layout, they are often referring to how content is grouped. A good layout is not just a visual balance between blocks. It is a structure that helps users understand the story of the page and find important information quickly. Real websites use clear sections for hero content, features, testimonials, navigation, and calls to action.",
+            "HTML gives the layout its semantic shape. The way you group content decides whether your page feels coherent or cluttered. A strong page usually has a header, a main content area, optional supporting sidebars, and a footer. These landmarks create a predictable mental model that users and developers both understand quickly.",
+            "This is the bridge between raw markup and front-end design. Once your HTML structure is semantically sound, CSS becomes easier to apply and JavaScript becomes easier to integrate. You are building a foundation for future complexity, not just drawing boxes on the screen."
+          ],
+          "codeBlocks": [
+            "<body>\n  <header>\n    <h1>Heavy Engineers</h1>\n    <nav>Home | Courses | Contact</nav>\n  </header>\n\n  <main>\n    <section>\n      <h2>Learn the essentials</h2>\n      <p>Our course turns complex web structure into practical learning.</p>\n    </section>\n\n    <aside>\n      <h3>Quick links</h3>\n      <ul>\n        <li>HTML</li>\n        <li>CSS</li>\n        <li>JavaScript</li>\n      </ul>\n    </aside>\n  </main>\n\n  <footer>\n    <p>Ready to build?</p>\n  </footer>\n</body>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TB\nA[Page] --> B[Header]\nA --> C[Main Contents]\nA --> D[Sidebar]\nA --> E[Footer]\nC --> F[Hero]\nC --> G[Feature sections]\nC --> H[Call to action]"
+            }
+          ]
+        },
+        {
+          "id": "html-advanced",
+          "label": "Lesson 8",
+          "title": "Advanced HTML patterns: validation, metadata, and production-ready structure.",
+          "intro": "Advanced HTML is about building pages that are maintainable, searchable, accessible, and ready for real deployment. This is where quality engineering habits begin.",
+          "list": [
+            "Meta tags help describe page purpose, keywords, and social sharing previews.",
+            "Input validation rules reduce bad data and improve user experience.",
+            "Semantic HTML supports accessibility, future code changes, and stronger SEO.",
+            "Good structure makes the page easier to extend with CSS and JavaScript later."
+          ],
+          "paragraphs": [
+            "Once you understand the basics, the next level is quality. Production-grade HTML is not only about syntax correctness. It is about predictable structure, clean semantics, and consistent use of metadata. This becomes especially important when pages begin to scale and when multiple developers contribute to the same project.",
+            "Meta tags help browsers and social platforms understand the page purpose. The title, viewport metadata, description, and canonical tags all influence how the page is presented in search and on social sharing sites. Good metadata is part of product quality, not an optional add-on.",
+            "Validation rules also matter. Inputs with required, min, max, type, and pattern attributes help reduce mistakes before the data reaches the backend. This is a good example of how HTML contributes to real-world user experience and engineering discipline."
+          ],
+          "codeBlocks": [
+            "<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <meta name=\"description\" content=\"Learn HTML from beginner to advanced with practical examples.\" />\n  <title>HTML Course</title>\n</head>\n\n<input type=\"email\" name=\"email\" required />\n<input type=\"number\" min=\"18\" max=\"100\" />"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Page created] --> B[Metadata added]\nA --> C[Forms validated]\nB --> D[Search and social discoverability]\nC --> E[Cleaner user input]"
+            }
+          ]
+        },
+        {
+          "id": "html-project",
+          "label": "Lesson 9",
+          "title": "Build a realistic landing page with clean HTML.",
+          "intro": "The best way to master HTML is to create something realistic. A landing page is one of the most useful beginner-to-advanced exercises because it combines many commonly used elements in one complete design.",
+          "list": [
+            "A landing page needs clear hero text, trust signals, feature sections, and a call to action.",
+            "Good HTML groups related content into logical sections instead of dumping everything into one block.",
+            "Reusable patterns make the structure easier to scale with CSS and future content.",
+            "Strong markup creates a foundation for responsive design and engineering-quality front-end work."
+          ],
+          "paragraphs": [
+            "This final core lesson is about synthesis. Instead of learning isolated tags in a vacuum, you now combine them into a coherent product page. A landing page requires a clear headline, some explanatory copy, feature blocks, and form or CTA elements. The stronger your HTML structure, the easier it will be to layer in CSS and JavaScript later.",
+            "This is also where the real-world mindset kicks in. Good front-end developers think in sections, components, and content hierarchy. They do not just place elements because they fit on a viewport. They organize them to help the user understand the value of the product and take the next step.",
+            "If you can build a landing page cleanly with HTML, you are already thinking like a front-end engineer. The next steps in CSS and JavaScript become much easier because the foundation is strong."
+          ],
+          "codeBlocks": [
+            "<header>\n  <nav>\n    <a href=\"#features\">Features</a>\n    <a href=\"#pricing\">Pricing</a>\n    <a href=\"#contact\">Contact</a>\n  </nav>\n</header>\n\n<main>\n  <section>\n    <h1>Learn web development with confidence</h1>\n    <p>Structured lessons, real-world examples, and practical skills.</p>\n    <button>Start learning</button>\n  </section>\n\n  <section id=\"features\">\n    <h2>Why learners choose this path</h2>\n    <ul>\n      <li>Clear explanations</li>\n      <li>Hands-on examples</li>\n      <li>Practical structure</li>\n    </ul>\n  </section>\n</main>"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Landing page goal] --> B[Hero section]\nB --> C[Feature blocks]\nC --> D[CTA or form]\nD --> E[User takes next action]"
+            }
+          ]
+        },
+        {
+          "id": "html-playground",
+          "label": "Practice",
+          "title": "End-to-end HTML playground.",
+          "intro": "Use the editor below to create a complete mini landing page. This is the final practical step in the HTML journey: combine structure, hierarchy, forms, and content into one coherent page.",
+          "paragraphs": [
+            "The final step is not to memorize a checklist. It is to build something real. When you write a full landing page in HTML, you test every concept you learned in context: headings, lists, navigation, forms, grouping, and semantic structure.",
+            "This practice challenge is designed to feel like a realistic front-end task. You are not just writing tags; you are building a page that communicates value clearly and supports user action. The stronger your structure, the easier it becomes to add styles later without reworking the foundation.",
+            "When you finish this exercise, you will not just know the syntax. You will understand how a real HTML document works in context and how to think about content as a layered system rather than isolated fragments."
+          ],
+          "editor": {
+            "type": "html",
+            "label": "HTML final challenge",
+            "defaultHtml": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Heavy Engineers Course</title>\n    <style>\n      body { font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; margin: 0; padding: 24px; }\n      header, main, footer { max-width: 980px; margin: 0 auto; }\n      .hero { background: linear-gradient(135deg, #f3e8ff, #dbeafe); padding: 32px; border-radius: 18px; }\n      h1 { color: #4c1d95; }\n      .cta { background: #7c3aed; color: white; border: none; padding: 10px 18px; border-radius: 10px; }\n      .feature-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }\n      .feature { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }\n      form { margin-top: 18px; display: grid; gap: 12px; }\n      input, button { padding: 10px 12px; border-radius: 8px; border: 1px solid #cbd5e1; }\n    </style>\n  </head>\n  <body>\n    <header>\n      <nav>\n        <a href=\"#features\">Features</a>\n        <a href=\"#learn\">Learn</a>\n        <a href=\"#contact\">Contact</a>\n      </nav>\n    </header>\n\n    <main>\n      <section class=\"hero\">\n        <h1>Learn the web with confidence</h1>\n        <p>Structured lessons, practical examples, and a path from beginner to capable builder.</p>\n        <button class=\"cta\">Start learning</button>\n      </section>\n\n      <section id=\"features\">\n        <h2>Why this path works</h2>\n        <div class=\"feature-list\">\n          <div class=\"feature\">\n            <h3>Clear structure</h3>\n            <p>Every concept is organized from base to advanced application.</p>\n          </div>\n          <div class=\"feature\">\n            <h3>Real-world use</h3>\n            <p>Examples mirror the way companies build content-rich pages.</p>\n          </div>\n          <div class=\"feature\">\n            <h3>Practice driven</h3>\n            <p>You learn by writing, testing, and refining real HTML.</p>\n          </div>\n        </div>\n      </section>\n\n      <section id=\"contact\">\n        <h2>Join the learning path</h2>\n        <form>\n          <label for=\"name\">Name</label>\n          <input id=\"name\" type=\"text\" placeholder=\"Your name\" />\n\n          <label for=\"email\">Email</label>\n          <input id=\"email\" type=\"email\" placeholder=\"you@example.com\" />\n\n          <button type=\"submit\" class=\"cta\">Enroll now</button>\n        </form>\n      </section>\n    </main>\n\n    <footer>\n      <p>\u00a9 2026 Heavy Engineers</p>\n    </footer>\n  </body>\n</html>"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "sql",
+      "title": "SQL Essentials",
+      "badge": "Free",
+      "badgeStyle": "alt",
+      "icon": "\ud83d\uddc4\ufe0f",
+      "description": "A graduate-level SQL journey designed as 30-minute reading lessons with theory, examples, and hands-on SQL practice for real engineering work.",
+      "meta": [
+        "Graduate level",
+        "30 min lessons",
+        "Read & practice"
+      ],
+      "path": "course.html?course=sql",
+      "sections": [
+        {
+          "id": "intro",
+          "label": "Start here",
+          "title": "SQL for engineering graduates.",
+          "intro": "SQL is the language of data. Whether you are building applications, dashboards, data pipelines, or internal tools, SQL is the common language that turns raw records into decisions. This course is designed as focused 30-minute lessons so a learner can build real understanding without overwhelm.",
+          "cards": [
+            {
+              "title": "What is SQL?",
+              "body": "SQL stands for Structured Query Language and lets you define, query, transform, and manage relational data in a clear and repeatable way."
+            },
+            {
+              "title": "Why it matters",
+              "body": "Modern product teams, backend engineers, analysts, and data teams all depend on SQL for reporting, business logic, and operational decision-making."
+            },
+            {
+              "title": "What you will build",
+              "body": "You will learn how to model tables, query real datasets, join related records, analyze trends, and write production-safe SQL."
+            }
+          ]
+        },
+        {
+          "id": "database-model",
+          "label": "Lesson 1",
+          "title": "Database fundamentals and the relational model",
+          "intro": "A relational database stores information in tables. Each table represents a concept such as students, courses, orders, or employees, and the relationships between them define the system. This is the foundation of every serious SQL workflow.",
+          "list": [
+            "Entity: a real-world thing or concept such as Student, Course, or Account.",
+            "Attribute: a property of that entity such as name, salary, or date joined.",
+            "Table: a collection of related records described by columns.",
+            "Primary key: a unique identifier for every row.",
+            "Foreign key: a column that references data in another table.",
+            "Normalization: organizing data to reduce duplication and improve consistency."
+          ],
+          "paragraphs": [
+            "The relational model is one of the most important ideas in software engineering. Instead of storing everything in one giant list, we split data into smaller, connected tables. This makes the system easier to reason about, easier to query, and easier to maintain as the business grows.",
+            "Think of a table as a spreadsheet with a strict structure. The columns define what kind of information is stored, and each row represents one record. A primary key tells us which record is unique, while a foreign key connects two tables together. This relationship is what lets us answer richer questions like 'which student enrolled in which course?' or 'which employee belongs to which department?'.",
+            "Good data design is not only a technical detail; it protects the quality of the entire product. Poor table design leads to redundant records, inconsistent values, and difficult query logic. That is why engineers spend time thinking carefully about entities, keys, and relationships before writing a single query."
+          ],
+          "codeBlocks": [
+            "CREATE TABLE students (\n  student_id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  department VARCHAR(50),\n  year_of_study INT\n);\n\nCREATE TABLE courses (\n  course_id INT PRIMARY KEY,\n  course_name VARCHAR(100) NOT NULL,\n  credits INT\n);\n\nCREATE TABLE enrollments (\n  student_id INT,\n  course_id INT,\n  grade CHAR(2),\n  PRIMARY KEY (student_id, course_id),\n  FOREIGN KEY (student_id) REFERENCES students(student_id),\n  FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Schema explorer",
+            "defaultQuery": "SELECT s.name, COUNT(e.course_id) AS courses_enrolled FROM students s LEFT JOIN enrollments e ON e.student_id = s.student_id GROUP BY s.student_id, s.name ORDER BY courses_enrolled DESC;",
+            "schema": "CREATE TABLE students (student_id INTEGER, name TEXT, department TEXT, year_of_study INTEGER); CREATE TABLE courses (course_id INTEGER, course_name TEXT, credits INTEGER); CREATE TABLE enrollments (student_id INTEGER, course_id INTEGER, grade TEXT);",
+            "seedQueries": [
+              "INSERT INTO students (student_id, name, department, year_of_study) VALUES (1, 'Aarav', 'CS', 2);",
+              "INSERT INTO students (student_id, name, department, year_of_study) VALUES (2, 'Nisha', 'ECE', 3);",
+              "INSERT INTO students (student_id, name, department, year_of_study) VALUES (3, 'Kabir', 'CS', 2);",
+              "INSERT INTO courses (course_id, course_name, credits) VALUES (101, 'DBMS', 4);",
+              "INSERT INTO courses (course_id, course_name, credits) VALUES (102, 'Algorithms', 3);",
+              "INSERT INTO enrollments (student_id, course_id, grade) VALUES (1, 101, 'A');",
+              "INSERT INTO enrollments (student_id, course_id, grade) VALUES (1, 102, 'B');",
+              "INSERT INTO enrollments (student_id, course_id, grade) VALUES (3, 101, 'A');"
+            ]
+          }
+        },
+        {
+          "id": "ddl",
+          "label": "Lesson 2",
+          "title": "DDL: define schema and enforce data integrity",
+          "intro": "DDL stands for Data Definition Language. It is how you create, alter, and remove tables and constraints. This matters because schema design defines how safe and reliable your data will be over time.",
+          "list": [
+            "CREATE TABLE creates a new table structure.",
+            "ALTER TABLE modifies the existing table definition.",
+            "DROP TABLE removes a table permanently.",
+            "PRIMARY KEY enforces uniqueness for row identity.",
+            "FOREIGN KEY protects relationships across tables.",
+            "CHECK, NOT NULL, UNIQUE, and DEFAULT improve data quality."
+          ],
+          "paragraphs": [
+            "The schema is the blueprint of your database. It tells SQL what the data should look like before any business logic runs. A strong schema reduces bugs because invalid values are rejected early rather than being allowed to spread through the application.",
+            "This is where database engineering becomes disciplined and professional. Constraints are not decoration; they are rules. A NOT NULL constraint prevents missing values, CHECK ensures valid ranges, UNIQUE prevents duplicates, and foreign keys protect relationships. These rules are part of the product's data guarantee.",
+            "When someone says 'the data is clean,' they usually mean the database has a solid schema behind it. SQL gives you the tools to define that structure clearly, and a disciplined engineer uses them intentionally."
+          ],
+          "codeBlocks": [
+            "CREATE TABLE employees (\n  employee_id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  department VARCHAR(50) NOT NULL,\n  salary DECIMAL(10,2) CHECK (salary >= 0),\n  age INT CHECK (age >= 18),\n  city VARCHAR(50) DEFAULT 'Unknown'\n);\n\nALTER TABLE employees\nADD COLUMN join_date DATE;\n\nCREATE TABLE departments (\n  department_id INT PRIMARY KEY,\n  department_name VARCHAR(100) UNIQUE NOT NULL\n);"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Schema validation",
+            "defaultQuery": "SELECT name, type FROM pragma_table_info('employees');",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT NOT NULL, department TEXT NOT NULL, salary INTEGER CHECK (salary >= 0), age INTEGER CHECK (age >= 18), city TEXT DEFAULT 'Unknown');",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary, age, city) VALUES (1, 'Aarav', 'Engineering', 90000, 28, 'Pune');",
+              "INSERT INTO employees (employee_id, name, department, salary, age, city) VALUES (2, 'Nisha', 'Marketing', 72000, 26, 'Delhi');",
+              "INSERT INTO employees (employee_id, name, department, salary, age, city) VALUES (3, 'Kabir', 'Engineering', 85000, 30, 'Bengaluru');"
+            ]
+          }
+        },
+        {
+          "id": "dml",
+          "label": "Lesson 3",
+          "title": "DML: insert, update, delete, and maintain records",
+          "intro": "DML stands for Data Manipulation Language. This is where data enters, changes, and leaves the system. A database is only useful when it can represent real business activity accurately.",
+          "list": [
+            "INSERT adds new rows to a table.",
+            "UPDATE changes values in existing rows.",
+            "DELETE removes rows that are no longer needed.",
+            "SELECT reads or filters rows for questions and analysis.",
+            "Transactions bundle operations so they either all succeed or all fail."
+          ],
+          "paragraphs": [
+            "Good SQL engineers think in terms of safe data changes. An update can accidentally affect too many rows if the WHERE condition is wrong, and a delete without a filter can remove the wrong data. That is why careful query writing matters so much in data work.",
+            "Transactions are the safety net. Imagine transferring money from one account to another: if the debit succeeds but the credit fails, the financial records are wrong. SQL transactions help ensure that changes happen as a single atomic unit. That is one of the most important ideas in database reliability.",
+            "This lesson teaches you how to manage records responsibly. The goal is not just to write queries, but to write queries that preserve correctness and reflect business intent."
+          ],
+          "codeBlocks": [
+            "INSERT INTO employees (employee_id, name, department, salary, age)\nVALUES\n  (1, 'Aarav', 'Engineering', 90000, 28),\n  (2, 'Nisha', 'Marketing', 72000, 26),\n  (3, 'Kabir', 'Engineering', 85000, 30);\n\nUPDATE employees\nSET salary = salary * 1.10\nWHERE department = 'Engineering';\n\nDELETE FROM employees\nWHERE employee_id = 3;\n\nBEGIN;\nUPDATE accounts SET balance = balance - 500 WHERE id = 1;\nUPDATE accounts SET balance = balance + 500 WHERE id = 2;\nCOMMIT;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Record operations",
+            "defaultQuery": "SELECT employee_id, name, department, salary FROM employees ORDER BY salary DESC;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER, age INTEGER);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary, age) VALUES (1, 'Aarav', 'Engineering', 90000, 28);",
+              "INSERT INTO employees (employee_id, name, department, salary, age) VALUES (2, 'Nisha', 'Marketing', 72000, 26);",
+              "INSERT INTO employees (employee_id, name, department, salary, age) VALUES (3, 'Kabir', 'Engineering', 85000, 30);",
+              "INSERT INTO employees (employee_id, name, department, salary, age) VALUES (4, 'Meera', 'Design', 76000, 24);"
+            ]
+          }
+        },
+        {
+          "id": "querying",
+          "label": "Lesson 4",
+          "title": "SELECT: filter, sort, and shape results",
+          "intro": "The SELECT statement is the heart of SQL. It is how you ask questions of the database and shape the answer into something usable. This is the lesson that turns raw records into insight.",
+          "list": [
+            "SELECT lists the columns you want to see.",
+            "FROM tells SQL which table to read from.",
+            "WHERE filters rows using conditions.",
+            "ORDER BY sorts rows in ascending or descending order.",
+            "LIMIT restricts the number of rows returned.",
+            "DISTINCT removes duplicate rows.",
+            "LIKE supports pattern-based matching."
+          ],
+          "paragraphs": [
+            "Every serious SQL workflow starts with SELECT. The first question is usually not 'how do I join tables?' but 'what data am I actually trying to read?' Querying well means choosing the right columns, filtering to the relevant rows, and making the answer easy to understand.",
+            "Many beginner mistakes happen here: selecting too many columns, forgetting the WHERE clause, or sorting the wrong field. These mistakes are easy to make when you are learning, but they become costly in production data work. A good SQL engineer gets the question, writes the intent clearly, and validates the output before moving ahead.",
+            "This is also where SQL starts to feel like a language of reasoning. You are not just reading data; you are answering a business question. 'Which customers bought in the last thirty days?' 'Which engineers earn above the department average?' These are real analytical prompts, and SELECT is how you answer them."
+          ],
+          "codeBlocks": [
+            "SELECT name, department, salary\nFROM employees\nWHERE salary > 80000\nORDER BY salary DESC\nLIMIT 5;\n\nSELECT DISTINCT city\nFROM employees\nWHERE city LIKE 'P%';"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Query builder",
+            "defaultQuery": "SELECT name, department, salary FROM employees WHERE salary > 75000 ORDER BY salary DESC;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER, city TEXT);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary, city) VALUES (1, 'Aarav', 'Engineering', 90000, 'Pune');",
+              "INSERT INTO employees (employee_id, name, department, salary, city) VALUES (2, 'Nisha', 'Marketing', 72000, 'Delhi');",
+              "INSERT INTO employees (employee_id, name, department, salary, city) VALUES (3, 'Kabir', 'Engineering', 85000, 'Bengaluru');",
+              "INSERT INTO employees (employee_id, name, department, salary, city) VALUES (4, 'Meera', 'Design', 76000, 'Mumbai');"
+            ]
+          }
+        },
+        {
+          "id": "aggregation",
+          "label": "Lesson 5",
+          "title": "Aggregations and grouping for real analysis",
+          "intro": "A lot of SQL work is not about individual rows; it is about summarizing them. Aggregation gives you the tools to calculate totals, averages, counts, and patterns across large datasets.",
+          "list": [
+            "COUNT counts the number of rows or non-null values.",
+            "SUM adds numeric values.",
+            "AVG calculates the average value.",
+            "MIN and MAX return the smallest and largest values.",
+            "GROUP BY organizes rows into groups.",
+            "HAVING filters aggregated groups."
+          ],
+          "paragraphs": [
+            "Aggregation is where SQL stops being a lookup language and starts being a reporting language. You can answer questions like 'How many users signed up this month?' 'What is the average salary by department?' or 'Which products are generating the most revenue?'. These are essential business questions, and SQL is built for them.",
+            "One of the most important rules in aggregation is understanding the difference between WHERE and HAVING. WHERE filters individual rows before grouping, while HAVING filters the grouped results after aggregation. A clear understanding of this difference is a hallmark of a strong SQL developer.",
+            "As you grow in SQL, you will realize that most real dashboard queries depend on grouping and aggregation. It is one of the most practical and important parts of the language."
+          ],
+          "codeBlocks": [
+            "SELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_salary\nFROM employees\nGROUP BY department\nHAVING AVG(salary) > 75000\nORDER BY avg_salary DESC;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Aggregation lab",
+            "defaultQuery": "SELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_salary FROM employees GROUP BY department ORDER BY avg_salary DESC;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (1, 'Aarav', 'Engineering', 90000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (2, 'Nisha', 'Marketing', 72000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (3, 'Kabir', 'Engineering', 85000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (4, 'Meera', 'Design', 76000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (5, 'Rohan', 'Design', 82000);"
+            ]
+          }
+        },
+        {
+          "id": "joins",
+          "label": "Lesson 6",
+          "title": "Joins: connect related tables and answer deeper questions",
+          "intro": "Most real systems require more than one table. Joins allow us to combine related information so we can answer richer business questions without duplicating data.",
+          "list": [
+            "INNER JOIN returns only rows that match in both tables.",
+            "LEFT JOIN keeps all rows from the left table and matches where possible.",
+            "RIGHT JOIN keeps all rows from the right table.",
+            "FULL OUTER JOIN keeps unmatched rows from both sides.",
+            "Self-join compares values within the same table."
+          ],
+          "paragraphs": [
+            "A normalized database splits related data across multiple tables, but the business problem is often asked across those tables at once. Joins are how SQL reconnects that data in a meaningful way. Without joins, the data system would feel fragmented and every query would need manual merging logic.",
+            "The choice of join type matters. An INNER JOIN is useful when you only care about records with matching relationships. A LEFT JOIN is often the safer default when you want every parent record and the optional related records. If you do not understand the difference, you can quickly misread the data and produce incorrect reporting.",
+            "This is a core skill for engineers, analysts, and product teams. In real business work, the interesting questions almost always involve more than one table, so join logic is essential."
+          ],
+          "codeBlocks": [
+            "SELECT e.name, d.department_name, e.salary\nFROM employees e\nJOIN departments d ON e.department_id = d.department_id\nWHERE e.salary > 80000;\n\nSELECT c.course_name, s.name\nFROM courses c\nLEFT JOIN enrollments en ON c.course_id = en.course_id\nLEFT JOIN students s ON s.student_id = en.student_id;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Join practice",
+            "defaultQuery": "SELECT e.name, d.department_name, e.salary FROM employees e JOIN departments d ON e.department_id = d.department_id ORDER BY e.salary DESC;",
+            "schema": "CREATE TABLE departments (department_id INTEGER PRIMARY KEY, department_name TEXT); CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department_id INTEGER, salary INTEGER);",
+            "seedQueries": [
+              "INSERT INTO departments (department_id, department_name) VALUES (1, 'Engineering');",
+              "INSERT INTO departments (department_id, department_name) VALUES (2, 'Marketing');",
+              "INSERT INTO departments (department_id, department_name) VALUES (3, 'Design');",
+              "INSERT INTO employees (employee_id, name, department_id, salary) VALUES (1, 'Aarav', 1, 90000);",
+              "INSERT INTO employees (employee_id, name, department_id, salary) VALUES (2, 'Nisha', 2, 72000);",
+              "INSERT INTO employees (employee_id, name, department_id, salary) VALUES (3, 'Meera', 3, 76000);",
+              "INSERT INTO employees (employee_id, name, department_id, salary) VALUES (4, 'Kabir', 1, 85000);"
+            ]
+          }
+        },
+        {
+          "id": "subqueries",
+          "label": "Lesson 7",
+          "title": "Subqueries, CTEs, and set logic",
+          "intro": "Subqueries and CTEs let you break large problems into smaller logical steps. They help you answer questions that need layered filtering, derived data, or reusable logic.",
+          "list": [
+            "Subquery: a query inside another query.",
+            "IN and EXISTS help check whether records match a condition.",
+            "CTE: a temporary named result used to simplify complex reads.",
+            "UNION combines results from multiple queries.",
+            "INTERSECT and EXCEPT compare sets of rows."
+          ],
+          "paragraphs": [
+            "Sometimes the business question is not just 'show me some rows,' but 'show me rows that satisfy a condition based on another calculation.' That is where subqueries shine. They let you compute an intermediate result and then use it as input to a larger question.",
+            "CTEs are especially useful when queries become long and hard to read. Instead of burying a complex logic tree in one giant statement, you can name the intermediate stages and make the logic readable. This is a strong engineering habit because maintainable SQL is readable SQL.",
+            "Set operations are another powerful idea. UNION allows you to stack answers together, while INTERSECT and EXCEPT help you compare collections precisely. These are valuable tools for analytical reporting and data reconciliation."
+          ],
+          "codeBlocks": [
+            "SELECT name\nFROM employees\nWHERE salary > (SELECT AVG(salary) FROM employees);\n\nWITH high_paid AS (\n  SELECT * FROM employees WHERE salary > 90000\n)\nSELECT department, COUNT(*) AS count_high_paid\nFROM high_paid\nGROUP BY department;\n\nSELECT name FROM employees\nUNION\nSELECT name FROM managers;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Subquery lab",
+            "defaultQuery": "SELECT name, department, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees) ORDER BY salary DESC;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (1, 'Aarav', 'Engineering', 90000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (2, 'Nisha', 'Marketing', 72000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (3, 'Kabir', 'Engineering', 85000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (4, 'Meera', 'Design', 76000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (5, 'Rohan', 'Design', 82000);"
+            ]
+          }
+        },
+        {
+          "id": "advanced-sql",
+          "label": "Lesson 8",
+          "title": "Window functions for ranking and running analysis",
+          "intro": "Window functions let you compute values across a set of rows without collapsing the result set. This is what makes SQL powerful for dashboards, scoring, ranking, and trend analysis.",
+          "list": [
+            "ROW_NUMBER assigns a unique sequence within a result set.",
+            "RANK and DENSE_RANK handle ties in rankings.",
+            "SUM OVER computes running or grouped totals.",
+            "PARTITION BY splits the calculation by a category.",
+            "ORDER BY inside the window defines the calculation sequence."
+          ],
+          "paragraphs": [
+            "Window functions are one of the most important advanced SQL concepts because they bridge the gap between simple filtering and data analysis. Instead of reducing rows to one summary, window functions allow us to calculate values row by row while still retaining the full dataset.",
+            "This is especially useful for leaderboards, cumulative totals, monthly trends, and risk scoring. If you have ever wanted to know 'what was the running total after each order?' or 'who ranks first in each department?', window functions are the tool for that job.",
+            "The key idea is that the function operates over a set of rows while preserving the original result. This is a very different mental model from aggregate queries, and once understood, it unlocks a major portion of analytical SQL."
+          ],
+          "codeBlocks": [
+            "SELECT name, department, salary,\n       RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank\nFROM employees;\n\nSELECT order_date, amount,\n       SUM(amount) OVER (ORDER BY order_date) AS running_total\nFROM orders;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Window function lab",
+            "defaultQuery": "SELECT name, department, salary, RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dept_rank FROM employees ORDER BY department, dept_rank;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (1, 'Aarav', 'Engineering', 90000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (2, 'Kabir', 'Engineering', 85000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (3, 'Nisha', 'Marketing', 72000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (4, 'Meera', 'Design', 76000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (5, 'Rohan', 'Design', 82000);"
+            ]
+          }
+        },
+        {
+          "id": "optimization",
+          "label": "Lesson 9",
+          "title": "Performance tuning: indexes, execution plans, and query quality",
+          "intro": "A query that returns the correct answer is useful, but a query that returns the correct answer quickly is production-ready. Performance tuning is about understanding how SQL executes work under the hood.",
+          "list": [
+            "Indexes speed up reads for frequent lookups and filters.",
+            "EXPLAIN shows how the database plans a query.",
+            "Avoid selecting unnecessary columns or rows.",
+            "Poor join patterns and missing indexes often create slow queries.",
+            "Query clarity matters because readable SQL is usually easier to optimize."
+          ],
+          "paragraphs": [
+            "When people talk about SQL performance, they often talk about indexes. An index is like a book index: it helps the database find the right rows faster. But indexes are not free. They improve read speed and can slow down writes, so they must be chosen with care.",
+            "Execution plans help you understand what the database is doing. A query may look simple, but the planner might scan a massive table or perform repeated work. That is why experienced engineers learn to read EXPLAIN output and understand where the time is being spent.",
+            "This lesson is about engineering judgment. Performance is not just a technical metric; it affects product responsiveness, cost, and the overall experience of the application."
+          ],
+          "codeBlocks": [
+            "CREATE INDEX idx_employees_department ON employees (department);\n\nEXPLAIN SELECT * FROM employees WHERE department = 'Engineering';\n\nSELECT * FROM employees WHERE department = 'Engineering' AND salary > 80000;"
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "Performance check",
+            "defaultQuery": "SELECT * FROM employees WHERE department = 'Engineering' ORDER BY salary DESC;",
+            "schema": "CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER); CREATE INDEX idx_employees_department ON employees (department);",
+            "seedQueries": [
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (1, 'Aarav', 'Engineering', 90000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (2, 'Nisha', 'Marketing', 72000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (3, 'Kabir', 'Engineering', 85000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (4, 'Meera', 'Design', 76000);",
+              "INSERT INTO employees (employee_id, name, department, salary) VALUES (5, 'Rohan', 'Engineering', 82000);"
+            ]
+          }
+        },
+        {
+          "id": "practice",
+          "label": "Practice",
+          "title": "Capstone SQL challenge",
+          "intro": "This final practice is designed to feel like a real business task. You will combine filtering, grouping, joins, and aggregate logic to answer a data-driven question from a realistic scenario.",
+          "challenge": "Find the departments whose average salary is above the overall average, then show the employee count and average salary in each qualifying department.",
+          "paragraphs": [
+            "This challenge is not about memorizing syntax. It is about applying the thinking you learned across the course. You need to understand grouping, conditional filtering, and the difference between aggregate and row-level logic. That is where SQL skills become real problem-solving skills.",
+            "The strongest SQL programmers do not just write queries; they read a question, identify the data model, plan the join or aggregation logic, and validate the output. This final exercise is designed to help you practice that workflow in a realistic and repeatable way."
+          ],
+          "editor": {
+            "type": "sql",
+            "label": "SQL capstone challenge",
+            "defaultQuery": "SELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_salary FROM employees GROUP BY department HAVING AVG(salary) > (SELECT AVG(salary) FROM employees) ORDER BY avg_salary DESC;",
+            "schema": "CREATE TABLE employees (id INTEGER, name TEXT, department TEXT, salary INTEGER, city TEXT);",
+            "seedQueries": [
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (1, 'Aarav', 'Engineering', 90000, 'Pune');",
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (2, 'Nisha', 'Marketing', 72000, 'Delhi');",
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (3, 'Kabir', 'Engineering', 85000, 'Bengaluru');",
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (4, 'Meera', 'Design', 76000, 'Mumbai');",
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (5, 'Rohan', 'Design', 82000, 'Hyderabad');",
+              "INSERT INTO employees (id, name, department, salary, city) VALUES (6, 'Sonia', 'Finance', 67000, 'Chennai');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "css-mastery",
+      "title": "CSS Mastery",
+      "badge": "Upcoming",
+      "badgeStyle": "alt",
+      "icon": "\ud83c\udfa8",
+      "description": "Design responsive, production-ready interfaces with layout systems, modern styling patterns, and reusable visual foundations.",
+      "meta": [
+        "Frontend",
+        "Responsive design"
+      ],
+      "path": "#",
+      "status": "upcoming",
+      "isUpcoming": true,
+      "sections": []
+    },
+    {
+      "slug": "javascript-foundations",
+      "title": "JavaScript Foundations",
+      "badge": "Upcoming",
+      "badgeStyle": "alt",
+      "icon": "\u26a1",
+      "description": "Understand the DOM, events, functions, async flows, and data-driven logic that powers modern interactive applications.",
+      "meta": [
+        "Frontend",
+        "Logic & interactivity"
+      ],
+      "path": "#",
+      "status": "upcoming",
+      "isUpcoming": true,
+      "sections": []
+    },
+    {
+      "slug": "react-product-builders",
+      "title": "React for Product Builders",
+      "badge": "Upcoming",
+      "badgeStyle": "",
+      "icon": "\u269b\ufe0f",
+      "description": "Scale from components to production UI architecture with real-world patterns for state, props, and component design.",
+      "meta": [
+        "React",
+        "UI architecture"
+      ],
+      "path": "#",
+      "status": "upcoming",
+      "isUpcoming": true,
+      "sections": []
+    }
+  ]
+}

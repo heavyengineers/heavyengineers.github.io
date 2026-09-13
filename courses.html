@@ -64,11 +64,60 @@
       <section class="page-hero">
         <div class="container page-hero-content">
           <span class="page-breadcrumb">Home / Courses</span>
-          <h1>Build a stronger engineering skill stack.</h1>
+          <h1>Free tutorials built for fast learning.</h1>
           <p class="hero-copy">
-            Learn with guided study paths designed to help you understand concepts deeply,
-            improve problem solving, and build confidence for real-world performance.
+            Explore a growing library of free, beginner-friendly lessons designed to help learners read,
+            practice, and build confidence without a paywall.
           </p>
+        </div>
+      </section>
+
+      <section id="course-library">
+        <div id="course-library-grid" class="container cards"></div>
+      </section>
+
+      <section id="course-upcoming">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-label">Upcoming courses</span>
+            <h2>New learning tracks in the pipeline.</h2>
+            <p>These courses are being prepared for launch and will be added as soon as the curriculum is ready for public release.</p>
+          </div>
+          <div id="course-upcoming-grid" class="cards feature-courses"></div>
+        </div>
+      </section>
+
+      <section id="notify-me" class="notify-section">
+        <div class="container">
+          <div class="notify-card">
+            <div>
+              <span class="section-label">Stay informed</span>
+              <h2>Join the launch list for upcoming courses.</h2>
+              <p>Tell us which track you want and we will keep you posted as soon as it is live.</p>
+            </div>
+
+            <form id="notify-form" class="notify-form">
+              <label>
+                <span>Name</span>
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                <span>Course</span>
+                <select name="course" id="notify-course" required>
+                  <option value="">Select a course</option>
+                  <option value="CSS Mastery">CSS Mastery</option>
+                  <option value="JavaScript Foundations">JavaScript Foundations</option>
+                  <option value="React for Product Builders">React for Product Builders</option>
+                </select>
+              </label>
+              <button type="submit" class="primary-btn">Notify me</button>
+            </form>
+            <p id="notify-status" class="notify-status" aria-live="polite"></p>
+          </div>
         </div>
       </section>
 
