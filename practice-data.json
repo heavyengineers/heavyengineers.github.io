@@ -5,9 +5,12 @@
       "title": "Find active users",
       "difficulty": "Easy",
       "prompt": "Return `name` and `email` for users whose status is `active`. Sort alphabetically by name.",
-      "hints": ["Filter rows before ordering.", "Return only the requested columns."],
+      "hints": [
+        "Filter rows before ordering.",
+        "Return only the requested columns."
+      ],
       "editor": {
-        "defaultQuery": "SELECT name, email FROM users WHERE status = 'active' ORDER BY name;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT, status TEXT);",
         "seedQueries": [
           "INSERT INTO users VALUES (1, 'Aarav', 'aarav@example.com', 'active');",
@@ -15,7 +18,7 @@
           "INSERT INTO users VALUES (3, 'Kabir', 'kabir@example.com', 'active');",
           "INSERT INTO users VALUES (4, 'Meera', 'meera@example.com', 'pending');"
         ],
-        "solutionQuery": "SELECT name, email FROM users WHERE status = 'active' ORDER BY name;"
+        "expectedSignature": "f50f92b9"
       }
     },
     {
@@ -23,9 +26,12 @@
       "title": "Top three salaries",
       "difficulty": "Easy",
       "prompt": "Return the three highest-paid employees with their name and salary. Sort from highest to lowest salary.",
-      "hints": ["Use ORDER BY with descending direction.", "Limit the result after sorting."],
+      "hints": [
+        "Use ORDER BY with descending direction.",
+        "Limit the result after sorting."
+      ],
       "editor": {
-        "defaultQuery": "SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 3;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER);",
         "seedQueries": [
           "INSERT INTO employees VALUES (1, 'Aarav', 'Engineering', 90000);",
@@ -34,7 +40,7 @@
           "INSERT INTO employees VALUES (4, 'Meera', 'Design', 76000);",
           "INSERT INTO employees VALUES (5, 'Rohan', 'Engineering', 82000);"
         ],
-        "solutionQuery": "SELECT name, salary FROM employees ORDER BY salary DESC LIMIT 3;"
+        "expectedSignature": "cca68097"
       }
     },
     {
@@ -42,9 +48,12 @@
       "title": "Count employees by department",
       "difficulty": "Easy",
       "prompt": "Return each department and the number of employees in it. Sort by employee count descending, then department name.",
-      "hints": ["Group rows by department.", "COUNT(*) counts rows in each group."],
+      "hints": [
+        "Group rows by department.",
+        "COUNT(*) counts rows in each group."
+      ],
       "editor": {
-        "defaultQuery": "SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department ORDER BY employee_count DESC, department;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT);",
         "seedQueries": [
           "INSERT INTO employees VALUES (1, 'Aarav', 'Engineering');",
@@ -53,7 +62,7 @@
           "INSERT INTO employees VALUES (4, 'Meera', 'Design');",
           "INSERT INTO employees VALUES (5, 'Rohan', 'Engineering');"
         ],
-        "solutionQuery": "SELECT department, COUNT(*) AS employee_count FROM employees GROUP BY department ORDER BY employee_count DESC, department;"
+        "expectedSignature": "ca8a07ce"
       }
     },
     {
@@ -61,9 +70,12 @@
       "title": "Customers without orders",
       "difficulty": "Easy",
       "prompt": "Find every customer who has never placed an order. Return customer names in alphabetical order.",
-      "hints": ["Start with customers so unmatched customers can survive.", "Look for a NULL order identifier after the join."],
+      "hints": [
+        "Start with customers so unmatched customers can survive.",
+        "Look for a NULL order identifier after the join."
+      ],
       "editor": {
-        "defaultQuery": "SELECT c.name FROM customers c LEFT JOIN orders o ON o.customer_id = c.id WHERE o.id IS NULL ORDER BY c.name;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders (id INTEGER PRIMARY KEY, customer_id INTEGER, total INTEGER);",
         "seedQueries": [
           "INSERT INTO customers VALUES (1, 'Aarav');",
@@ -73,7 +85,7 @@
           "INSERT INTO orders VALUES (102, 1, 800);",
           "INSERT INTO orders VALUES (103, 3, 450);"
         ],
-        "solutionQuery": "SELECT c.name FROM customers c LEFT JOIN orders o ON o.customer_id = c.id WHERE o.id IS NULL ORDER BY c.name;"
+        "expectedSignature": "2abb3772"
       }
     },
     {
@@ -81,9 +93,12 @@
       "title": "Departments above the average",
       "difficulty": "Medium",
       "prompt": "Return departments whose average salary is greater than 75000. Include the department and rounded average salary, ordered highest first.",
-      "hints": ["Group before filtering groups.", "HAVING filters aggregate results."],
+      "hints": [
+        "Group before filtering groups.",
+        "HAVING filters aggregate results."
+      ],
       "editor": {
-        "defaultQuery": "SELECT department, ROUND(AVG(salary), 2) AS average_salary FROM employees GROUP BY department HAVING AVG(salary) > 75000 ORDER BY average_salary DESC;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary INTEGER);",
         "seedQueries": [
           "INSERT INTO employees VALUES (1, 'Aarav', 'Engineering', 90000);",
@@ -92,7 +107,7 @@
           "INSERT INTO employees VALUES (4, 'Meera', 'Design', 76000);",
           "INSERT INTO employees VALUES (5, 'Rohan', 'Design', 82000);"
         ],
-        "solutionQuery": "SELECT department, ROUND(AVG(salary), 2) AS average_salary FROM employees GROUP BY department HAVING AVG(salary) > 75000 ORDER BY average_salary DESC;"
+        "expectedSignature": "99984ed3"
       }
     },
     {
@@ -100,9 +115,12 @@
       "title": "Second-highest distinct salary",
       "difficulty": "Medium",
       "prompt": "Return the second-highest distinct salary. Return one column named `second_highest_salary`, or NULL if it does not exist.",
-      "hints": ["Remove duplicate salary values before selecting.", "OFFSET can skip the highest value."],
+      "hints": [
+        "Remove duplicate salary values before selecting.",
+        "OFFSET can skip the highest value."
+      ],
       "editor": {
-        "defaultQuery": "SELECT (SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 1) AS second_highest_salary;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, salary INTEGER);",
         "seedQueries": [
           "INSERT INTO employees VALUES (1, 'Aarav', 90000);",
@@ -110,7 +128,7 @@
           "INSERT INTO employees VALUES (3, 'Kabir', 90000);",
           "INSERT INTO employees VALUES (4, 'Meera', 76000);"
         ],
-        "solutionQuery": "SELECT (SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 1) AS second_highest_salary;"
+        "expectedSignature": "8e04d22f"
       }
     },
     {
@@ -118,9 +136,12 @@
       "title": "Build a running revenue total",
       "difficulty": "Medium",
       "prompt": "Return each order date, its amount, and the cumulative revenue through that date. Preserve chronological order.",
-      "hints": ["Use SUM as a window function.", "The window ORDER BY controls the running sequence."],
+      "hints": [
+        "Use SUM as a window function.",
+        "The window ORDER BY controls the running sequence."
+      ],
       "editor": {
-        "defaultQuery": "SELECT order_date, amount, SUM(amount) OVER (ORDER BY order_date, id) AS running_revenue FROM orders ORDER BY order_date, id;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE orders (id INTEGER PRIMARY KEY, order_date TEXT, amount INTEGER);",
         "seedQueries": [
           "INSERT INTO orders VALUES (1, '2025-01-01', 100);",
@@ -128,7 +149,7 @@
           "INSERT INTO orders VALUES (3, '2025-01-02', 50);",
           "INSERT INTO orders VALUES (4, '2025-01-04', 400);"
         ],
-        "solutionQuery": "SELECT order_date, amount, SUM(amount) OVER (ORDER BY order_date, id) AS running_revenue FROM orders ORDER BY order_date, id;"
+        "expectedSignature": "19fc5d8c"
       }
     },
     {
@@ -136,9 +157,12 @@
       "title": "Latest order per customer",
       "difficulty": "Hard",
       "prompt": "Return each customer and their latest order amount. Customers without orders should not appear.",
-      "hints": ["Rank orders inside each customer partition.", "Filter the ranked relation after calculating the window value."],
+      "hints": [
+        "Rank orders inside each customer partition.",
+        "Filter the ranked relation after calculating the window value."
+      ],
       "editor": {
-        "defaultQuery": "WITH ranked_orders AS (SELECT customer_id, amount, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date DESC, id DESC) AS position FROM orders) SELECT c.name, r.amount AS latest_amount FROM customers c JOIN ranked_orders r ON r.customer_id = c.id WHERE r.position = 1 ORDER BY c.name;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT); CREATE TABLE orders (id INTEGER PRIMARY KEY, customer_id INTEGER, order_date TEXT, amount INTEGER);",
         "seedQueries": [
           "INSERT INTO customers VALUES (1, 'Aarav');",
@@ -148,7 +172,7 @@
           "INSERT INTO orders VALUES (102, 1, '2025-01-04', 200);",
           "INSERT INTO orders VALUES (103, 2, '2025-01-02', 300);"
         ],
-        "solutionQuery": "WITH ranked_orders AS (SELECT customer_id, amount, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date DESC, id DESC) AS position FROM orders) SELECT c.name, r.amount AS latest_amount FROM customers c JOIN ranked_orders r ON r.customer_id = c.id WHERE r.position = 1 ORDER BY c.name;"
+        "expectedSignature": "bd2180b6"
       }
     },
     {
@@ -156,9 +180,12 @@
       "title": "Weekly active retention",
       "difficulty": "Hard",
       "prompt": "For each signup week, count how many users returned during the following week. Return signup week and retained user count.",
-      "hints": ["Join activity back to users using user_id.", "Compare activity dates to the signup date using SQLite date functions."],
+      "hints": [
+        "Join activity back to users using user_id.",
+        "Compare activity dates to the signup date using SQLite date functions."
+      ],
       "editor": {
-        "defaultQuery": "SELECT u.signup_week, COUNT(DISTINCT a.user_id) AS retained_users FROM users u JOIN activity a ON a.user_id = u.id AND a.activity_date >= date(u.signup_week, '+7 day') AND a.activity_date < date(u.signup_week, '+14 day') GROUP BY u.signup_week ORDER BY u.signup_week;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE users (id INTEGER PRIMARY KEY, signup_week TEXT); CREATE TABLE activity (id INTEGER PRIMARY KEY, user_id INTEGER, activity_date TEXT);",
         "seedQueries": [
           "INSERT INTO users VALUES (1, '2025-01-06');",
@@ -169,7 +196,7 @@
           "INSERT INTO activity VALUES (103, 2, '2025-01-22');",
           "INSERT INTO activity VALUES (104, 3, '2025-01-20');"
         ],
-        "solutionQuery": "SELECT u.signup_week, COUNT(DISTINCT a.user_id) AS retained_users FROM users u JOIN activity a ON a.user_id = u.id AND a.activity_date >= date(u.signup_week, '+7 day') AND a.activity_date < date(u.signup_week, '+14 day') GROUP BY u.signup_week ORDER BY u.signup_week;"
+        "expectedSignature": "ae9ea6ea"
       }
     },
     {
@@ -177,9 +204,12 @@
       "title": "Find missing invoice numbers",
       "difficulty": "Hard",
       "prompt": "Return invoice numbers that are missing between the smallest and largest invoice number. Sort ascending.",
-      "hints": ["Generate a sequence with a recursive CTE.", "Compare generated values against invoices with NOT EXISTS."],
+      "hints": [
+        "Generate a sequence with a recursive CTE.",
+        "Compare generated values against invoices with NOT EXISTS."
+      ],
       "editor": {
-        "defaultQuery": "WITH RECURSIVE numbers(value) AS (SELECT MIN(invoice_no) FROM invoices UNION ALL SELECT value + 1 FROM numbers WHERE value < (SELECT MAX(invoice_no) FROM invoices)) SELECT value AS missing_invoice_no FROM numbers WHERE NOT EXISTS (SELECT 1 FROM invoices i WHERE i.invoice_no = numbers.value) ORDER BY value;",
+        "defaultQuery": "",
         "schema": "CREATE TABLE invoices (invoice_no INTEGER PRIMARY KEY, customer TEXT);",
         "seedQueries": [
           "INSERT INTO invoices VALUES (1001, 'Aarav');",
@@ -187,7 +217,7 @@
           "INSERT INTO invoices VALUES (1004, 'Kabir');",
           "INSERT INTO invoices VALUES (1007, 'Meera');"
         ],
-        "solutionQuery": "WITH RECURSIVE numbers(value) AS (SELECT MIN(invoice_no) FROM invoices UNION ALL SELECT value + 1 FROM numbers WHERE value < (SELECT MAX(invoice_no) FROM invoices)) SELECT value AS missing_invoice_no FROM numbers WHERE NOT EXISTS (SELECT 1 FROM invoices i WHERE i.invoice_no = numbers.value) ORDER BY value;"
+        "expectedSignature": "6cb0f13b"
       }
     }
   ],
@@ -197,13 +227,33 @@
       "title": "Build an accessible profile card",
       "difficulty": "Easy",
       "prompt": "Create a profile card for a learner. Include one h1, an image with useful alt text, a paragraph, and a link with descriptive text.",
-      "requirements": ["Use semantic content, not a wall of div elements.", "The image must have meaningful alt text.", "The link text must describe its destination."],
+      "requirements": [
+        "Use semantic content, not a wall of div elements.",
+        "The image must have meaningful alt text.",
+        "The link text must describe its destination."
+      ],
       "starter": "<main class=\"card\">\n  <!-- Build your profile here -->\n</main>",
       "validation": [
-        {"type": "selector", "selector": "h1", "message": "Add one primary heading with h1."},
-        {"type": "selector", "selector": "img[alt]", "message": "Add an image with useful alt text."},
-        {"type": "selector", "selector": "p", "message": "Add a descriptive profile paragraph."},
-        {"type": "selector", "selector": "a[href]", "message": "Add a link with a destination."}
+        {
+          "type": "selector",
+          "selector": "h1",
+          "message": "Add one primary heading with h1."
+        },
+        {
+          "type": "selector",
+          "selector": "img[alt]",
+          "message": "Add an image with useful alt text."
+        },
+        {
+          "type": "selector",
+          "selector": "p",
+          "message": "Add a descriptive profile paragraph."
+        },
+        {
+          "type": "selector",
+          "selector": "a[href]",
+          "message": "Add a link with a destination."
+        }
       ]
     },
     {
@@ -211,13 +261,34 @@
       "title": "Mark up a course comparison table",
       "difficulty": "Easy",
       "prompt": "Create a comparison table for HTML, SQL, and System Design. Include a caption, column headers, and one row per course.",
-      "requirements": ["Use caption, thead, tbody, and th elements.", "Use scope=\"col\" for column headers.", "Keep the content genuinely tabular."],
+      "requirements": [
+        "Use caption, thead, tbody, and th elements.",
+        "Use scope=\"col\" for column headers.",
+        "Keep the content genuinely tabular."
+      ],
       "starter": "<main>\n  <!-- Build the accessible table here -->\n</main>",
       "validation": [
-        {"type": "selector", "selector": "table caption", "message": "Add a caption that explains the table."},
-        {"type": "selector", "selector": "table thead", "message": "Add a thead with column headers."},
-        {"type": "selector", "selector": "table tbody", "message": "Add course rows inside tbody."},
-        {"type": "attribute", "selector": "table th", "attribute": "scope", "message": "Add scope to table headers."}
+        {
+          "type": "selector",
+          "selector": "table caption",
+          "message": "Add a caption that explains the table."
+        },
+        {
+          "type": "selector",
+          "selector": "table thead",
+          "message": "Add a thead with column headers."
+        },
+        {
+          "type": "selector",
+          "selector": "table tbody",
+          "message": "Add course rows inside tbody."
+        },
+        {
+          "type": "attribute",
+          "selector": "table th",
+          "attribute": "scope",
+          "message": "Add scope to table headers."
+        }
       ]
     },
     {
@@ -225,14 +296,38 @@
       "title": "Create a trustworthy signup form",
       "difficulty": "Medium",
       "prompt": "Build a signup form with name, email, password, and a submit button. The form should communicate requirements through native HTML.",
-      "requirements": ["Every input needs a connected label.", "Use appropriate input types and required attributes.", "Use autocomplete where it improves the experience."],
+      "requirements": [
+        "Every input needs a connected label.",
+        "Use appropriate input types and required attributes.",
+        "Use autocomplete where it improves the experience."
+      ],
       "starter": "<main>\n  <!-- Build the signup form here -->\n</main>",
       "validation": [
-        {"type": "selector", "selector": "form", "message": "Add a form element."},
-        {"type": "selector", "selector": "label[for]", "message": "Connect each field to a label."},
-        {"type": "selector", "selector": "input[type=\"email\"][required]", "message": "Add a required email input."},
-        {"type": "selector", "selector": "input[type=\"password\"][required]", "message": "Add a required password input."},
-        {"type": "selector", "selector": "button[type=\"submit\"]", "message": "Add a submit button."}
+        {
+          "type": "selector",
+          "selector": "form",
+          "message": "Add a form element."
+        },
+        {
+          "type": "selector",
+          "selector": "label[for]",
+          "message": "Connect each field to a label."
+        },
+        {
+          "type": "selector",
+          "selector": "input[type=\"email\"][required]",
+          "message": "Add a required email input."
+        },
+        {
+          "type": "selector",
+          "selector": "input[type=\"password\"][required]",
+          "message": "Add a required password input."
+        },
+        {
+          "type": "selector",
+          "selector": "button[type=\"submit\"]",
+          "message": "Add a submit button."
+        }
       ]
     },
     {
@@ -240,16 +335,50 @@
       "title": "Compose a semantic article page",
       "difficulty": "Medium",
       "prompt": "Create an article page with a header, nav, main article, aside reading note, and footer. Give the article a clear heading hierarchy.",
-      "requirements": ["Use semantic landmarks for the page regions.", "Use one clear h1 and supporting h2 headings.", "Make navigation links keyboard-accessible native anchors."],
+      "requirements": [
+        "Use semantic landmarks for the page regions.",
+        "Use one clear h1 and supporting h2 headings.",
+        "Make navigation links keyboard-accessible native anchors."
+      ],
       "starter": "<!-- Build a complete article document here -->",
       "validation": [
-        {"type": "selector", "selector": "header", "message": "Add a header landmark."},
-        {"type": "selector", "selector": "nav", "message": "Add a navigation landmark."},
-        {"type": "selector", "selector": "main article", "message": "Place the article inside main."},
-        {"type": "selector", "selector": "aside", "message": "Add an aside for the reading note."},
-        {"type": "selector", "selector": "footer", "message": "Add a footer landmark."},
-        {"type": "count", "selector": "h1", "minimum": 1, "message": "Add one clear h1."},
-        {"type": "count", "selector": "h2", "minimum": 1, "message": "Add at least one supporting h2."}
+        {
+          "type": "selector",
+          "selector": "header",
+          "message": "Add a header landmark."
+        },
+        {
+          "type": "selector",
+          "selector": "nav",
+          "message": "Add a navigation landmark."
+        },
+        {
+          "type": "selector",
+          "selector": "main article",
+          "message": "Place the article inside main."
+        },
+        {
+          "type": "selector",
+          "selector": "aside",
+          "message": "Add an aside for the reading note."
+        },
+        {
+          "type": "selector",
+          "selector": "footer",
+          "message": "Add a footer landmark."
+        },
+        {
+          "type": "count",
+          "selector": "h1",
+          "minimum": 1,
+          "message": "Add one clear h1."
+        },
+        {
+          "type": "count",
+          "selector": "h2",
+          "minimum": 1,
+          "message": "Add at least one supporting h2."
+        }
       ]
     },
     {
@@ -257,13 +386,33 @@
       "title": "Build a resilient media section",
       "difficulty": "Hard",
       "prompt": "Create a media section with a responsive image, caption, and video fallback text. The content should remain understandable when media cannot load.",
-      "requirements": ["Use figure and figcaption.", "Provide useful alt text and explicit dimensions.", "Include fallback text inside the video element."],
+      "requirements": [
+        "Use figure and figcaption.",
+        "Provide useful alt text and explicit dimensions.",
+        "Include fallback text inside the video element."
+      ],
       "starter": "<main>\n  <!-- Build a resilient media section here -->\n</main>",
       "validation": [
-        {"type": "selector", "selector": "figure figcaption", "message": "Add a figure caption."},
-        {"type": "selector", "selector": "figure img[alt][width][height]", "message": "Add an image with alt text and dimensions."},
-        {"type": "selector", "selector": "video source", "message": "Add a video source."},
-        {"type": "selector", "selector": "video", "message": "Add fallback text inside the video element."}
+        {
+          "type": "selector",
+          "selector": "figure figcaption",
+          "message": "Add a figure caption."
+        },
+        {
+          "type": "selector",
+          "selector": "figure img[alt][width][height]",
+          "message": "Add an image with alt text and dimensions."
+        },
+        {
+          "type": "selector",
+          "selector": "video source",
+          "message": "Add a video source."
+        },
+        {
+          "type": "selector",
+          "selector": "video",
+          "message": "Add fallback text inside the video element."
+        }
       ]
     }
   ]

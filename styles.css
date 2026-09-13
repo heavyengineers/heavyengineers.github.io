@@ -17,6 +17,18 @@
   --shadow-soft: 0 18px 38px rgba(15, 23, 42, 0.08);
   --radius: 22px;
   --max-width: 1180px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+}
+
+.course-nav-toggle {
+  display: none;
 }
 
 .code-input::placeholder {
@@ -208,6 +220,18 @@
   font-size: 0.84rem;
 }
 
+.practice-list-toggle {
+  display: none;
+  margin-left: auto;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  background: transparent;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
 .practice-list-heading strong {
   color: #c4b5fd;
 }
@@ -229,6 +253,96 @@
 .practice-problem:hover,
 .practice-problem.active {
   background: rgba(124, 58, 237, 0.07);
+}
+
+.course-progress-card,
+.lesson-completion,
+.next-lesson-card {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.06), rgba(14, 165, 233, 0.06));
+}
+
+.course-progress-card > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.course-progress-card small,
+.lesson-completion-note,
+.next-lesson-card small {
+  color: var(--text-soft);
+}
+
+.lesson-context-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.lesson-objectives {
+  margin: 0 0 1rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--secondary);
+  border-radius: 0 1rem 1rem 0;
+  background: rgba(14, 165, 233, 0.07);
+}
+
+.lesson-objectives strong {
+  color: var(--text);
+}
+
+.lesson-objectives ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--text-soft);
+}
+
+.lesson-context-bar a,
+.next-lesson-card {
+  color: var(--primary-dark);
+}
+
+.lesson-completion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lesson-completion label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+}
+
+.lesson-completion input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--primary);
+}
+
+.next-lesson-card {
+  text-decoration: none;
+}
+
+.next-lesson-card span {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .practice-problem-number {
@@ -566,6 +680,15 @@ button {
 
 .nav-links a:hover::after,
 .nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--primary-dark);
+  font-weight: 800;
+}
+
+.nav-links a[aria-current="page"]::after {
   transform: scaleX(1);
 }
 
@@ -1399,6 +1522,72 @@ h2 {
   color: #e2e8f0;
 }
 
+.system-design-deep-dive {
+  display: grid;
+  gap: 1.1rem;
+  margin: 2rem 0;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(circle at 100% 0, rgba(124, 58, 237, 0.11), transparent 34%),
+    linear-gradient(135deg, #f8fbff, #f8fafc);
+}
+
+.deep-dive-heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.deep-dive-heading h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  letter-spacing: -0.035em;
+}
+
+.system-design-deep-dive .lesson-body {
+  max-width: 78ch;
+  margin: 0;
+}
+
+.deep-dive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.deep-dive-card {
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.deep-dive-card ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.deep-dive-card p {
+  margin: 0.65rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.deep-dive-warning {
+  border-color: rgba(245, 158, 11, 0.26);
+  background: rgba(255, 251, 235, 0.88);
+}
+
+.deep-dive-warning .callout-label {
+  color: #b45309;
+}
+
 .expert-questions strong {
   color: #c4b5fd;
 }
@@ -1605,6 +1794,23 @@ h2 {
   .editor-expanded {
     inset: 0.5rem;
   }
+
+  .lesson-context-bar,
+  .lesson-completion {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .course-section {
@@ -1660,6 +1866,23 @@ h2 {
 .course-section p,
 .bullet-list {
   color: var(--text-soft);
+}
+
+.lesson-summary-card {
+  position: relative;
+}
+
+.lesson-summary-card.is-complete {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(14, 165, 233, 0.04));
+}
+
+.lesson-summary-status {
+  display: inline-flex;
+  margin-top: 0.7rem;
+  color: var(--primary-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
 }
 
 .code-block {
@@ -1876,33 +2099,8 @@ h2 {
   min-width: 8.7rem;
 }
 
-.editor-actions button[data-run-sql-editor]::before,
-.editor-actions button[data-run-html-editor]::before {
-  content: "▶";
-  font-size: 0.65rem;
-}
-
-.editor-actions button[data-format-sql-editor]::before {
-  content: "≡";
-  font-size: 1rem;
-  font-weight: 900;
-}
-
-.editor-actions button[data-reset-sql-editor]::before,
-.editor-actions button[data-reset-html-editor]::before {
-  content: "↻";
-  font-size: 1rem;
-}
-
-.editor-actions button[data-expand-editor]::before {
-  content: "↗";
-  font-size: 0.9rem;
-}
-
-.editor-actions button[data-check-sql-editor]::before,
-.editor-actions button[data-check-html-editor]::before {
-  content: "✓";
-  font-size: 0.85rem;
+.editor-actions button::before {
+  content: none !important;
 }
 
 #htmlEditor,
@@ -2076,7 +2274,7 @@ textarea[id^="sqlEditor-"] {
 }
 
 .schema-details summary::before {
-  content: "▾";
+  content: ">";
   color: var(--secondary);
   font-size: 0.8rem;
   transition: transform 0.2s ease;
@@ -2113,6 +2311,8 @@ textarea[id^="sqlEditor-"] {
 }
 
 .schema-content {
+  max-height: 24rem;
+  overflow: auto;
   padding: 0 1rem 1rem;
 }
 
@@ -2224,6 +2424,44 @@ textarea[id^="sqlEditor-"] {
   color: #047857;
 }
 
+.sql-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+}
+
+.sql-result-actions button {
+  border: 1px solid rgba(4, 120, 87, 0.25);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.55rem;
+  background: #fff;
+  color: #047857;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.runtime-error {
+  margin: 0.75rem 0;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 0.7rem;
+  background: rgba(239, 68, 68, 0.08);
+  color: #991b1b;
+  font-size: 0.84rem;
+}
+
+.runtime-error button {
+  margin-left: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 .sql-result-empty {
   background: rgba(245, 158, 11, 0.08);
   border-color: rgba(245, 158, 11, 0.24);
@@ -2250,6 +2488,39 @@ textarea[id^="sqlEditor-"] {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
+}
+
+.sql-history {
+  border-top: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 0.7rem 0.85rem;
+  background: rgba(248, 250, 252, 0.75);
+}
+
+.sql-history summary {
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.sql-history [data-sql-history-list] {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.sql-history button {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  background: #fff;
+  color: var(--text-soft);
+  font: 0.72rem/1.35 "SFMono-Regular", Consolas, monospace;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .sql-output th,
@@ -2578,6 +2849,9 @@ textarea[id^="sqlEditor-"] {
 }
 
 @media (max-width: 900px) {
+  .deep-dive-grid {
+    grid-template-columns: 1fr;
+  }
   .cards,
   .feature-courses,
   .testimonial-grid {
@@ -2604,8 +2878,34 @@ textarea[id^="sqlEditor-"] {
     position: static;
   }
 
+  .course-nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 0.8rem;
+    background: #fff;
+    color: var(--text);
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .course-nav.is-collapsed {
+    display: none;
+  }
+
+  .course-nav {
+    display: none;
+  }
+
+  .course-nav:not(.is-collapsed) {
+    display: grid;
+  }
+
   .cta-box,
-  .nav,
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
@@ -2621,6 +2921,16 @@ textarea[id^="sqlEditor-"] {
 
   .nav-links.open {
     display: flex;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    z-index: 60;
+    padding: 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: var(--shadow);
   }
 
   .menu-toggle {
@@ -2632,6 +2942,38 @@ textarea[id^="sqlEditor-"] {
 
   .nav-cta {
     display: none;
+  }
+
+  .practice-list-toggle {
+    display: inline-flex;
+  }
+
+  .practice-list #practice-problem-list {
+    display: none;
+  }
+
+  .practice-list.is-expanded #practice-problem-list {
+    display: block;
+  }
+
+  .editor-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .editor-actions .small-inline {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .schema-content {
+    max-height: 18rem;
+  }
+
+  body.nav-open {
+    overflow: hidden;
   }
 }
 

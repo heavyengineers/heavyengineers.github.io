@@ -982,7 +982,7 @@
       "badge": "Free",
       "badgeStyle": "",
       "icon": "\ud83c\udfd7\ufe0f",
-      "description": "A practical system design course inspired by Alex Xu's book, covering architecture thinking, trade-offs, data flow, caching, reliability, and interview-ready design patterns.",
+      "description": "A practical system design course covering architecture thinking, trade-offs, data flow, caching, reliability, and interview-ready design patterns through original explanations and exercises.",
       "meta": [
         "System design",
         "Architecture",
