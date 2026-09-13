@@ -112,6 +112,10 @@ function isUpcomingCourse(course) {
   return Boolean(course?.isUpcoming || course?.status === 'upcoming');
 }
 
+function normalizeCourses(data) {
+  return Array.isArray(data?.courses) ? data.courses : [];
+}
+
 function renderCourseCard(course) {
   const isUpcoming = isUpcomingCourse(course);
   const href = isUpcoming ? '#' : (course.path || `course.html?course=${encodeURIComponent(course.slug)}`);
@@ -142,9 +146,9 @@ async function renderCourseGrid(targetSelector, options = {}) {
   if (!target) return;
 
   try {
-    const response = await fetch('courses-data.json');
+    const response = await fetch('courses-data.json?v=16');
     const data = await response.json();
-    const courses = Array.isArray(data.courses) ? data.courses : [];
+    const courses = normalizeCourses(data);
     const visibleCourses = options.onlyUpcoming
       ? courses.filter(isUpcomingCourse)
       : courses.filter((course) => !isUpcomingCourse(course));
@@ -1616,9 +1620,9 @@ async function renderGenericCoursePage() {
   }
 
   try {
-    const response = await fetch('courses-data.json');
+    const response = await fetch('courses-data.json?v=16');
     const data = await response.json();
-    const courses = Array.isArray(data.courses) ? data.courses : [];
+    const courses = normalizeCourses(data);
     const params = new URLSearchParams(window.location.search);
     const selectedSlug = params.get('course') || courses[0]?.slug || 'sql';
     const selectedSectionKey = params.get('section');

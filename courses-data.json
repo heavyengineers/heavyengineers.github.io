@@ -1260,6 +1260,170 @@
           ]
         }
       ]
+    },
+    {
+          "slug": "ai-for-forward-deployed-engineers",
+          "title": "AI for Forward-Deployed Engineers",
+          "badge": "Flagship",
+          "badgeStyle": "alt",
+          "icon": "✦",
+          "description": "Learn how to discover, prototype, evaluate, deploy, and improve AI products in real customer environments.",
+          "meta": [
+            "Intermediate",
+            "11 lessons",
+            "Build & ship"
+          ],
+          "path": "course.html?course=ai-for-forward-deployed-engineers",
+          "sections": [
+            {
+              "id": "fde-ai-foundations",
+              "label": "Start here",
+              "title": "The FDE advantage: turn customer problems into working AI systems.",
+              "intro": "Forward-deployed engineers operate at the boundary between product, data, software, and customer reality. This course teaches a repeatable way to find valuable AI opportunities and deliver systems that people can trust.",
+              "cards": [
+                {"title": "What you will build", "body": "A production-minded AI workflow that moves from a customer pain point to a measurable, monitored solution."},
+                {"title": "The delivery loop", "body": "Discover the workflow, define the contract, prototype quickly, evaluate honestly, deploy safely, and learn from usage."},
+                {"title": "The standard", "body": "A demo is not a product. Every project must explain value, failure behavior, data boundaries, latency, cost, and ownership."}
+              ],
+              "list": [
+                "Separate an AI-shaped problem from a problem that needs ordinary software.",
+                "Map the customer workflow before choosing a model or framework.",
+                "Define a measurable outcome and a safe first release."
+              ]
+            },
+            {
+              "id": "fde-discovery",
+              "label": "Lesson 1",
+              "title": "Discover the workflow before you design the solution.",
+              "intro": "The strongest FDEs do not begin with a model. They observe the work, identify the expensive decision, and make the hidden constraints explicit.",
+              "list": [
+                "Interview for the current workflow, not just the requested feature.",
+                "Find the moment where uncertainty, repetition, or delay creates business cost.",
+                "Write the user, trigger, inputs, decision, action, and measurable outcome."
+              ],
+              "challenge": "Write a one-page problem brief for an operations team that spends hours reviewing support tickets and routing escalations."
+            },
+            {
+              "id": "fde-use-case-design",
+              "label": "Lesson 2",
+              "title": "Choose the right AI pattern for the job.",
+              "intro": "Classification, extraction, search, generation, ranking, and agents have different failure modes. Good solution design starts by matching the pattern to the workflow.",
+              "list": [
+                "Prefer deterministic software when the rules are stable and explicit.",
+                "Use retrieval when the answer must be grounded in changing private knowledge.",
+                "Use generation when language transformation or synthesis creates user value.",
+                "Treat autonomous actions as a later step, not the default starting point."
+              ],
+              "codeBlocks": [
+                "workflow -> decision type -> system pattern\n\nextract facts       -> structured output\nfind evidence       -> retrieval + citations\nsuggest next action -> ranked recommendations\nexecute action      -> tool call + approval gate"
+              ]
+            },
+            {
+              "id": "fde-data-context",
+              "label": "Lesson 3",
+              "title": "Make customer context useful, secure, and traceable.",
+              "intro": "AI quality is often a context problem. Learn how to prepare documents, metadata, permissions, and source references so the system can answer with the right evidence.",
+              "list": [
+                "Create a source-of-truth map before building ingestion pipelines.",
+                "Preserve document identity, timestamps, permissions, and version history.",
+                "Design retrieval filters so users only receive evidence they are allowed to see."
+              ],
+              "challenge": "Design a document ingestion contract that preserves tenant, permission, source, version, and freshness metadata."
+            },
+            {
+              "id": "fde-prototyping",
+              "label": "Lesson 4",
+              "title": "Prototype the smallest useful vertical slice.",
+              "intro": "A good prototype tests the riskiest assumption with realistic inputs. It is not a collection of disconnected prompts or a polished screen with no evaluation.",
+              "list": [
+                "Use representative customer examples, including messy and adversarial cases.",
+                "Keep model calls behind a small interface so providers can change.",
+                "Expose citations, uncertainty, and human approval in the first useful flow."
+              ],
+              "codeBlocks": [
+                "request\n  -> authenticate tenant\n  -> retrieve permitted context\n  -> call model with structured contract\n  -> validate output\n  -> show evidence + approval action\n  -> record outcome"
+              ]
+            },
+            {
+              "id": "fde-evaluation",
+              "label": "Lesson 5",
+              "title": "Evaluate AI systems like products, not magic.",
+              "intro": "Evaluation connects model behavior to customer value. Build a small golden set, define quality dimensions, and test regressions before every meaningful change.",
+              "list": [
+                "Measure correctness, groundedness, completeness, refusal quality, latency, and cost.",
+                "Label examples with the customer or domain expert who owns the outcome.",
+                "Separate offline evaluation from real-world acceptance and adoption."
+              ],
+              "challenge": "Create an evaluation matrix for an AI support-triage assistant with pass criteria for routing, explanation, and unsafe requests."
+            },
+            {
+              "id": "fde-agents-and-tools",
+              "label": "Lesson 6",
+              "title": "Build reliable tool-using systems and agent workflows.",
+              "intro": "Agents are useful when a workflow requires planning across tools. They become risky when actions are vague, permissions are broad, and there is no recovery path.",
+              "list": [
+                "Give every tool a narrow schema, explicit permission boundary, and timeout.",
+                "Make actions idempotent and require approval for consequential changes.",
+                "Record the plan, tool inputs, outputs, retries, and final outcome."
+              ],
+              "codeBlocks": [
+                "plan -> validate permissions -> preview action\n     -> human approval -> idempotent tool call\n     -> verify result -> emit audit event"
+              ]
+            },
+            {
+              "id": "fde-production",
+              "label": "Lesson 7",
+              "title": "Ship AI features with production guardrails.",
+              "intro": "A customer-facing AI feature needs ordinary engineering discipline: authentication, rate limits, timeouts, fallbacks, observability, and a rollback plan.",
+              "list": [
+                "Design explicit fallback behavior when the model, retrieval, or tool fails.",
+                "Track latency, token usage, cost, errors, user corrections, and escalation rates.",
+                "Use feature flags and staged rollout to protect customer workflows."
+              ],
+              "challenge": "Define the failure contract for a document assistant when retrieval is unavailable, the model times out, or the answer lacks evidence."
+            },
+            {
+              "id": "fde-customer-delivery",
+              "label": "Lesson 8",
+              "title": "Lead the customer from demo to adoption.",
+              "intro": "FDE work succeeds when the customer changes behavior. Learn how to run a technical discovery, align stakeholders, instrument adoption, and turn feedback into a focused delivery plan.",
+              "list": [
+                "Demo the workflow and the evidence behind the result, not only the final answer.",
+                "Define a pilot with a named owner, baseline metric, success threshold, and review date.",
+                "Translate feedback into product decisions instead of accumulating custom requests."
+              ],
+              "challenge": "Create a two-week pilot plan for an AI claims-review assistant with stakeholders, milestones, risks, and success metrics."
+            },
+            {
+              "id": "fde-economics",
+              "label": "Lesson 9",
+              "title": "Make quality, latency, and cost trade-offs explicit.",
+              "intro": "The best architecture is not the most impressive one. It is the one that creates durable customer value within the operating constraints of the business.",
+              "list": [
+                "Estimate cost per task, monthly volume, peak load, and human review cost.",
+                "Choose model size, caching, batching, and retrieval depth based on measured value.",
+                "Explain what quality you are buying and what risk you are accepting."
+              ],
+              "codeBlocks": [
+                "monthly AI cost = requests * tokens/request * price/token\ncustomer value  = saved time + improved accuracy + faster decisions\nunit economics  = customer value - model cost - review cost - support cost"
+              ]
+            },
+            {
+              "id": "fde-capstone",
+              "label": "Capstone",
+              "title": "Ship an AI workflow for a real customer environment.",
+              "intro": "Bring the course together by designing an AI system for a specific customer workflow. Your final deliverable should show discovery, architecture, evaluation, rollout, economics, and a credible path to adoption.",
+              "challenge": "Design and present an AI operations copilot that reads customer requests, retrieves account context, recommends the next action, and routes high-risk cases to a human.",
+              "list": [
+                "Write the problem brief, success metric, non-goals, and pilot scope.",
+                "Define data access, retrieval, model contracts, tools, approvals, and fallbacks.",
+                "Create an evaluation set, rollout plan, observability dashboard, and cost model."
+              ],
+              "codeBlocks": [
+                "capstone deliverable\n1. Customer workflow and measurable pain\n2. AI pattern and system architecture\n3. Data, permissions, retrieval, and source evidence\n4. Evaluation set and acceptance thresholds\n5. Tool safety, fallbacks, and human review\n6. Rollout, adoption, observability, and unit economics"
+              ]
+            }
+      ]
     }
   ]
 }
