@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">HTML document anatomy</title>
+  <desc id="desc">A document tree with doctype, html, head, body, metadata, and content.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#f5f3ff"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1e3a8a" flood-opacity=".12"/></filter>
+  </defs>
+  <rect width="1200" height="620" rx="34" fill="url(#bg)"/>
+  <text x="70" y="78" fill="#312e81" font-family="Arial, sans-serif" font-size="30" font-weight="700">The browser turns HTML into a meaningful document tree</text>
+  <g filter="url(#shadow)" font-family="Arial, sans-serif" text-anchor="middle">
+    <rect x="455" y="115" width="290" height="64" rx="16" fill="#7c3aed"/>
+    <text x="600" y="155" fill="#fff" font-size="23" font-weight="700">&lt;html&gt; document</text>
+    <rect x="170" y="270" width="290" height="150" rx="18" fill="#fff" stroke="#0ea5e9" stroke-width="3"/>
+    <rect x="740" y="270" width="290" height="150" rx="18" fill="#fff" stroke="#10b981" stroke-width="3"/>
+    <text x="315" y="315" fill="#075985" font-size="24" font-weight="700">&lt;head&gt;</text>
+    <text x="315" y="355" fill="#475569" font-size="18">title · metadata · links</text>
+    <text x="885" y="315" fill="#047857" font-size="24" font-weight="700">&lt;body&gt;</text>
+    <text x="885" y="355" fill="#475569" font-size="18">headings · text · controls</text>
+    <rect x="70" y="490" width="220" height="65" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="350" y="490" width="220" height="65" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="630" y="490" width="220" height="65" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+    <rect x="910" y="490" width="220" height="65" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="180" y="531" fill="#334155" font-size="18">&lt;h1&gt; headings</text>
+    <text x="460" y="531" fill="#334155" font-size="18">&lt;p&gt; paragraphs</text>
+    <text x="740" y="531" fill="#334155" font-size="18">&lt;a&gt; links</text>
+    <text x="1020" y="531" fill="#334155" font-size="18">&lt;form&gt; actions</text>
+  </g>
+  <g stroke="#64748b" stroke-width="4" fill="none">
+    <path d="M600 179v48M315 227v43M885 227v43M315 420v70M885 420v70"/>
+    <path d="M315 227h570M180 465h840"/>
+  </g>
+</svg>

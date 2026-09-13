@@ -82,7 +82,7 @@
       "badge": "Free",
       "badgeStyle": "",
       "icon": "\ud83c\udf10",
-      "description": "A complete HTML journey for curious readers, beginners, and engineering graduates, built to take a learner from raw markup to practical production-ready structure.",
+      "description": "A deep HTML journey for curious readers, beginners, and engineering graduates, combining long-form explanations, browser behavior, accessibility, semantic design, and production-ready practice.",
       "meta": [
         "Beginner to advanced",
         "Read & practice"
@@ -112,6 +112,12 @@
             {
               "type": "mermaid",
               "code": "flowchart TD\nA[Reader starts here] --> B[Learn HTML basics]\nB --> C[Structure content]\nC --> D[Build forms and layouts]\nD --> E[Ship accessible, real pages]"
+            },
+            {
+              "type": "image",
+              "src": "assets/html-document-anatomy.svg",
+              "alt": "HTML document tree with head, body, headings, paragraphs, links, and forms",
+              "caption": "HTML gives the browser a document tree. Meaningful structure is the foundation for styling, scripting, search, and accessibility."
             }
           ],
           "paragraphs": [
@@ -147,6 +153,12 @@
             {
               "type": "mermaid",
               "code": "flowchart LR\nA[Document type] --> B[HTML Root]\nB --> C[Head]\nB --> D[Body]\nC --> E[Title and metadata]\nD --> F[Content like headings, text, links]"
+            },
+            {
+              "type": "image",
+              "src": "assets/html-document-anatomy.svg",
+              "alt": "Anatomy of an HTML document from the root element to head and body content",
+              "caption": "Read the document from the outside in: root, metadata, visible content, then meaningful child elements."
             }
           ]
         },
@@ -383,10 +395,10 @@
       "badge": "Free",
       "badgeStyle": "alt",
       "icon": "\ud83d\uddc4\ufe0f",
-      "description": "A graduate-level SQL journey designed as 30-minute reading lessons with theory, examples, and hands-on SQL practice for real engineering work.",
+      "description": "A graduate-level SQL journey with deep reading, theory, examples, engineering trade-offs, and hands-on SQL practice for real engineering work.",
       "meta": [
         "Graduate level",
-        "30 min lessons",
+        "Interactive SQL playground",
         "Read & practice"
       ],
       "path": "course.html?course=sql",
@@ -395,7 +407,7 @@
           "id": "intro",
           "label": "Start here",
           "title": "SQL for engineering graduates.",
-          "intro": "SQL is the language of data. Whether you are building applications, dashboards, data pipelines, or internal tools, SQL is the common language that turns raw records into decisions. This course is designed as focused 30-minute lessons so a learner can build real understanding without overwhelm.",
+          "intro": "SQL is the language of data. Whether you are building applications, dashboards, data pipelines, or internal tools, SQL is the common language that turns raw records into decisions. Each lesson is designed for deliberate, deep reading: understand the model, examine the trade-offs, study the examples, and then test your reasoning in the playground.",
           "cards": [
             {
               "title": "What is SQL?",
@@ -406,9 +418,47 @@
               "body": "Modern product teams, backend engineers, analysts, and data teams all depend on SQL for reporting, business logic, and operational decision-making."
             },
             {
-              "title": "What you will build",
-              "body": "You will learn how to model tables, query real datasets, join related records, analyze trends, and write production-safe SQL."
+              "title": "How you will practice",
+              "body": "Every playground lesson exposes its table schema, loads sample rows, highlights SQL as you type, formats your query, runs it in the browser, and explains errors when something fails."
             }
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Read the concept] --> B[Inspect schema]\nB --> C[Write SQL]\nC --> D[Format and run]\nD --> E[Read result or fix error]\nE --> C"
+            },
+            {
+              "type": "image",
+              "src": "assets/sql-query-lifecycle.svg",
+              "alt": "Question, schema, query, run, and refine SQL learning loop",
+              "caption": "A strong SQL workflow is a repeatable loop: understand the question, inspect the model, test the query, and explain the result."
+            }
+          ],
+          "paragraphs": [
+            "This is not a course where SQL examples are trapped in screenshots. Each practice lesson includes a small, isolated SQL playground powered by an in-browser database. You can inspect the tables, write a query, format it, run it, and immediately see rows or a useful error message.",
+            "The playground starts with a lesson-specific schema and seed data, so the examples behave like a small real database instead of an empty editor. The goal is to build the same loop engineers use at work: **understand the model**, write a query, validate the result, and improve the query when it fails.",
+            "Use the lessons actively. Change a filter, add a column, remove a join condition, or intentionally create an error. ==Learning what the database rejects is just as important as learning the query that succeeds.=="
+          ],
+          "pullQuote": "SQL becomes memorable when you stop reading queries as punctuation and start reading them as a chain of decisions.",
+          "readingNote": "As you read, keep a small prediction beside the editor: which tables will participate, how many rows should survive, and which columns should appear? That prediction turns passive reading into active practice.",
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Engineering habit",
+              "title": "Treat every result as a hypothesis check.",
+              "body": "A query that runs is not automatically correct. First predict the rows you expect, then run the query and compare the result with your mental model."
+            },
+            {
+              "type": "note",
+              "label": "How to read",
+              "title": "Read, predict, run, explain.",
+              "body": "For every example, pause before pressing Run. Explain what each clause should do, then use the output to test your explanation."
+            }
+          ],
+          "takeaways": [
+            "SQL is both a language for asking questions and a contract for protecting data.",
+            "The schema tells you what is possible; the result tells you what actually happened.",
+            "Small experiments in the playground are safer than guessing in a production database."
           ]
         },
         {
@@ -427,8 +477,36 @@
           "paragraphs": [
             "The relational model is one of the most important ideas in software engineering. Instead of storing everything in one giant list, we split data into smaller, connected tables. This makes the system easier to reason about, easier to query, and easier to maintain as the business grows.",
             "Think of a table as a spreadsheet with a strict structure. The columns define what kind of information is stored, and each row represents one record. A primary key tells us which record is unique, while a foreign key connects two tables together. This relationship is what lets us answer richer questions like 'which student enrolled in which course?' or 'which employee belongs to which department?'.",
-            "Good data design is not only a technical detail; it protects the quality of the entire product. Poor table design leads to redundant records, inconsistent values, and difficult query logic. That is why engineers spend time thinking carefully about entities, keys, and relationships before writing a single query."
+            "Good data design is not only a technical detail; it protects the quality of the entire product. Poor table design leads to redundant records, inconsistent values, and difficult query logic. That is why engineers spend time thinking carefully about entities, keys, and relationships before writing a single query.",
+            "A useful mental model is **identity → relationship → question**. First identify the row with a primary key, then connect it with a foreign key, and finally ask a question that combines the related facts. This sequence keeps complex queries understandable."
           ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nS[students\\nstudent_id] --> E[enrollments\\nstudent_id + course_id]\nC[courses\\ncourse_id] --> E\nE --> Q[Answer a business question]"
+            },
+            {
+              "type": "image",
+              "src": "assets/sql-relational-model.svg",
+              "alt": "Students, enrollments, and courses connected by primary and foreign keys",
+              "caption": "The same relationship shown as a readable table model: identity lives in primary keys, connections live in foreign keys."
+            }
+          ],
+          "callouts": [
+            {
+              "type": "warning",
+              "label": "Design warning",
+              "title": "Do not use names as relationships.",
+              "body": "Names can change and may not be unique. Stable numeric or generated IDs make joins predictable and protect relationships."
+            }
+          ],
+          "takeaways": [
+            "Rows represent instances; columns describe attributes; keys identify and connect them.",
+            "A normalized model reduces repeated facts and makes updates safer.",
+            "Before writing SQL, name the entities and the relationship you need to traverse."
+          ],
+          "pullQuote": "A database is not a pile of tables. It is a model of the world, and every relationship should answer a real question.",
+          "readingNote": "When a query feels confusing, stop and draw the tables. Most difficult joins become easier once the keys and direction of the relationship are visible.",
           "codeBlocks": [
             "CREATE TABLE students (\n  student_id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  department VARCHAR(50),\n  year_of_study INT\n);\n\nCREATE TABLE courses (\n  course_id INT PRIMARY KEY,\n  course_name VARCHAR(100) NOT NULL,\n  credits INT\n);\n\nCREATE TABLE enrollments (\n  student_id INT,\n  course_id INT,\n  grade CHAR(2),\n  PRIMARY KEY (student_id, course_id),\n  FOREIGN KEY (student_id) REFERENCES students(student_id),\n  FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);"
           ],
@@ -465,7 +543,27 @@
           "paragraphs": [
             "The schema is the blueprint of your database. It tells SQL what the data should look like before any business logic runs. A strong schema reduces bugs because invalid values are rejected early rather than being allowed to spread through the application.",
             "This is where database engineering becomes disciplined and professional. Constraints are not decoration; they are rules. A NOT NULL constraint prevents missing values, CHECK ensures valid ranges, UNIQUE prevents duplicates, and foreign keys protect relationships. These rules are part of the product's data guarantee.",
-            "When someone says 'the data is clean,' they usually mean the database has a solid schema behind it. SQL gives you the tools to define that structure clearly, and a disciplined engineer uses them intentionally."
+            "When someone says 'the data is clean,' they usually mean the database has a solid schema behind it. SQL gives you the tools to define that structure clearly, and a disciplined engineer uses them intentionally.",
+            "A useful design question is: **what invalid state should be impossible?** If an employee cannot have a negative salary, encode that rule with `CHECK`. If every department must have a name, make it `NOT NULL`. The database should enforce the rules that must remain true even when application code changes."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Application writes a value] --> B{Schema constraints}\nB -->|Valid| C[Commit row]\nB -->|Invalid| D[Reject with error]\nC --> E[Trusted data]"
+            }
+          ],
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Practical rule",
+              "title": "Put critical invariants close to the data.",
+              "body": "Application validation improves user feedback, but database constraints are the final safety net when multiple services or scripts write to the same tables."
+            }
+          ],
+          "takeaways": [
+            "DDL defines the shape of data and the rules that protect it.",
+            "Constraints turn assumptions into executable guarantees.",
+            "Schema changes should be planned because existing rows and application code depend on them."
           ],
           "codeBlocks": [
             "CREATE TABLE employees (\n  employee_id INT PRIMARY KEY,\n  name VARCHAR(100) NOT NULL,\n  department VARCHAR(50) NOT NULL,\n  salary DECIMAL(10,2) CHECK (salary >= 0),\n  age INT CHECK (age >= 18),\n  city VARCHAR(50) DEFAULT 'Unknown'\n);\n\nALTER TABLE employees\nADD COLUMN join_date DATE;\n\nCREATE TABLE departments (\n  department_id INT PRIMARY KEY,\n  department_name VARCHAR(100) UNIQUE NOT NULL\n);"
@@ -497,7 +595,27 @@
           "paragraphs": [
             "Good SQL engineers think in terms of safe data changes. An update can accidentally affect too many rows if the WHERE condition is wrong, and a delete without a filter can remove the wrong data. That is why careful query writing matters so much in data work.",
             "Transactions are the safety net. Imagine transferring money from one account to another: if the debit succeeds but the credit fails, the financial records are wrong. SQL transactions help ensure that changes happen as a single atomic unit. That is one of the most important ideas in database reliability.",
-            "This lesson teaches you how to manage records responsibly. The goal is not just to write queries, but to write queries that preserve correctness and reflect business intent."
+            "This lesson teaches you how to manage records responsibly. The goal is not just to write queries, but to write queries that preserve correctness and reflect business intent.",
+            "Before running a destructive statement, replace it with a `SELECT` using the same `WHERE` clause. If the previewed rows are not exactly the rows you intend to change, stop and revise the condition. This simple habit prevents many production incidents."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Write WHERE condition] --> B[Preview with SELECT]\nB --> C{Rows are correct?}\nC -->|No| A\nC -->|Yes| D[Run UPDATE or DELETE]\nD --> E[Verify result]"
+            }
+          ],
+          "callouts": [
+            {
+              "type": "warning",
+              "label": "Safety check",
+              "title": "Never trust a destructive query you have not previewed.",
+              "body": "A missing WHERE clause can affect every row. In production, use transactions, review the affected-row count, and keep a rollback plan."
+            }
+          ],
+          "takeaways": [
+            "Mutations change shared state, so correctness matters more than typing speed.",
+            "Transactions provide atomicity: all intended changes succeed together or none do.",
+            "Preview filters with SELECT before updating or deleting data."
           ],
           "codeBlocks": [
             "INSERT INTO employees (employee_id, name, department, salary, age)\nVALUES\n  (1, 'Aarav', 'Engineering', 90000, 28),\n  (2, 'Nisha', 'Marketing', 72000, 26),\n  (3, 'Kabir', 'Engineering', 85000, 30);\n\nUPDATE employees\nSET salary = salary * 1.10\nWHERE department = 'Engineering';\n\nDELETE FROM employees\nWHERE employee_id = 3;\n\nBEGIN;\nUPDATE accounts SET balance = balance - 500 WHERE id = 1;\nUPDATE accounts SET balance = balance + 500 WHERE id = 2;\nCOMMIT;"
@@ -600,7 +718,27 @@
           "paragraphs": [
             "A normalized database splits related data across multiple tables, but the business problem is often asked across those tables at once. Joins are how SQL reconnects that data in a meaningful way. Without joins, the data system would feel fragmented and every query would need manual merging logic.",
             "The choice of join type matters. An INNER JOIN is useful when you only care about records with matching relationships. A LEFT JOIN is often the safer default when you want every parent record and the optional related records. If you do not understand the difference, you can quickly misread the data and produce incorrect reporting.",
-            "This is a core skill for engineers, analysts, and product teams. In real business work, the interesting questions almost always involve more than one table, so join logic is essential."
+            "This is a core skill for engineers, analysts, and product teams. In real business work, the interesting questions almost always involve more than one table, so join logic is essential.",
+            "Read a join from left to right: start with the rows you must preserve, state the relationship in the `ON` clause, and only then add filters. **A filter in WHERE can accidentally remove the unmatched rows that a LEFT JOIN was meant to keep.**"
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Choose the base table] --> B[Pick INNER or LEFT JOIN]\nB --> C[Match keys in ON]\nC --> D[Filter rows in WHERE]\nD --> E[Inspect duplicates and missing matches]"
+            }
+          ],
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Debugging technique",
+              "title": "Count before and after each join.",
+              "body": "If a join unexpectedly multiplies rows, inspect the relationship cardinality. One customer with many orders should produce many result rows unless you aggregate afterward."
+            }
+          ],
+          "takeaways": [
+            "The join type controls which unmatched records survive.",
+            "The ON clause describes the relationship; WHERE describes the final filter.",
+            "Always check row counts and duplicates after combining tables."
           ],
           "codeBlocks": [
             "SELECT e.name, d.department_name, e.salary\nFROM employees e\nJOIN departments d ON e.department_id = d.department_id\nWHERE e.salary > 80000;\n\nSELECT c.course_name, s.name\nFROM courses c\nLEFT JOIN enrollments en ON c.course_id = en.course_id\nLEFT JOIN students s ON s.student_id = en.student_id;"
@@ -704,7 +842,27 @@
           "paragraphs": [
             "When people talk about SQL performance, they often talk about indexes. An index is like a book index: it helps the database find the right rows faster. But indexes are not free. They improve read speed and can slow down writes, so they must be chosen with care.",
             "Execution plans help you understand what the database is doing. A query may look simple, but the planner might scan a massive table or perform repeated work. That is why experienced engineers learn to read EXPLAIN output and understand where the time is being spent.",
-            "This lesson is about engineering judgment. Performance is not just a technical metric; it affects product responsiveness, cost, and the overall experience of the application."
+            "This lesson is about engineering judgment. Performance is not just a technical metric; it affects product responsiveness, cost, and the overall experience of the application.",
+            "Start optimization with evidence, not folklore. Measure the slow query, inspect the plan, change one thing, and measure again. ==The fastest query is the one that does less unnecessary work.=="
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart LR\nA[Slow query] --> B[Measure latency]\nB --> C[Read EXPLAIN plan]\nC --> D[Reduce rows or add index]\nD --> E[Measure again]\nE -->|Still slow| C"
+            }
+          ],
+          "callouts": [
+            {
+              "type": "warning",
+              "label": "Trade-off",
+              "title": "Every index has a maintenance cost.",
+              "body": "Indexes consume storage and must be updated on writes. Add them for real access patterns, then verify that the planner actually uses them."
+            }
+          ],
+          "takeaways": [
+            "Optimize based on measured workload and execution plans.",
+            "Select only the columns and rows the consumer needs.",
+            "Indexes help targeted reads but add write and storage overhead."
           ],
           "codeBlocks": [
             "CREATE INDEX idx_employees_department ON employees (department);\n\nEXPLAIN SELECT * FROM employees WHERE department = 'Engineering';\n\nSELECT * FROM employees WHERE department = 'Engineering' AND salary > 80000;"
@@ -731,7 +889,27 @@
           "challenge": "Find the departments whose average salary is above the overall average, then show the employee count and average salary in each qualifying department.",
           "paragraphs": [
             "This challenge is not about memorizing syntax. It is about applying the thinking you learned across the course. You need to understand grouping, conditional filtering, and the difference between aggregate and row-level logic. That is where SQL skills become real problem-solving skills.",
-            "The strongest SQL programmers do not just write queries; they read a question, identify the data model, plan the join or aggregation logic, and validate the output. This final exercise is designed to help you practice that workflow in a realistic and repeatable way."
+            "The strongest SQL programmers do not just write queries; they read a question, identify the data model, plan the join or aggregation logic, and validate the output. This final exercise is designed to help you practice that workflow in a realistic and repeatable way.",
+            "Try the challenge in stages: first calculate the overall average, then calculate department averages, then apply the comparison with `HAVING`. If the final output surprises you, inspect each stage independently instead of rewriting the whole query."
+          ],
+          "visuals": [
+            {
+              "type": "mermaid",
+              "code": "flowchart TD\nA[Business question] --> B[Inspect employees schema]\nB --> C[Calculate overall average]\nC --> D[Group by department]\nD --> E[Filter with HAVING]\nE --> F[Explain and validate result]"
+            }
+          ],
+          "callouts": [
+            {
+              "type": "tip",
+              "label": "Capstone method",
+              "title": "Build complex SQL one verified layer at a time.",
+              "body": "Name the intermediate question before writing the next clause. This makes debugging faster and gives you confidence that each part of the final query is correct."
+            }
+          ],
+          "takeaways": [
+            "Translate the business question into smaller data questions.",
+            "Use WHERE for rows and HAVING for grouped results.",
+            "A correct answer should be explainable in plain language, not only executable."
           ],
           "editor": {
             "type": "sql",

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Practice SQL in a free browser-based playground with a ready-to-query database schema." />
+    <meta name="theme-color" content="#7C3AED" />
+    <title>SQL Playground | Heavy Engineers</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="canonical" href="https://heavyengineers.github.io/sql-playground.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=10" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="index.html" class="brand" aria-label="Heavy Engineers home"><span class="brand-icon">HE</span><span class="brand-word">HEAVY ENGINEERS</span></a>
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a><a href="courses.html">Courses</a><a href="sql-playground.html" class="active">SQL Playground</a><a href="practice.html">Practice</a><a href="notes.html">Resources</a>
+        </nav>
+        <a href="contact.html" class="nav-cta">Join Now</a>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-content">
+          <span class="page-breadcrumb">Home / SQL Playground</span>
+          <h1>Explore SQL without limits.</h1>
+          <p class="hero-copy">A dedicated SQL workspace with a ready-made database. Inspect the schema, write any query, format it, run it, and learn from the result.</p>
+          <div class="hero-actions"><a class="primary-btn" href="#workspace">Open workspace</a><a class="secondary-btn" href="practice.html#sql">Try challenges</a></div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="playground-intro-grid">
+            <article class="page-card"><span class="section-label">Query freely</span><h2>One open database, endless experiments.</h2><p>Use the default schema to test SELECTs, joins, grouping, subqueries, window functions, inserts, updates, and your own ideas. Reset any time to return to the original sample data.</p></article>
+            <article class="page-card"><span class="section-label">Learn visibly</span><h3>Built for expert practice</h3><ul class="resource-list"><li><span class="check">✓</span> Formatted SQL and syntax highlighting</li><li><span class="check">✓</span> Visible table schema and sample rows</li><li><span class="check">✓</span> Structured errors and result counts</li></ul></article>
+          </div>
+        </div>
+      </section>
+      <section id="workspace">
+        <div class="container">
+          <div id="standalone-sql-playground"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="container footer-row"><div><strong>Heavy Engineers</strong><div>© <span id="year"></span> All rights reserved.</div></div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/sql.js@1.8.0/dist/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="script.js?v=10"></script>
+  </body>
+</html>

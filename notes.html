@@ -34,7 +34,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
   <body>
     <header class="topbar">
@@ -51,6 +51,8 @@
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="courses.html">Courses</a>
+          <a href="sql-playground.html">SQL Playground</a>
+          <a href="practice.html">Practice</a>
           <a href="notes.html">Resources</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
@@ -123,6 +125,36 @@
           </div>
         </div>
       </section>
+
+      <section id="popular-topics">
+        <div class="container">
+          <div class="section-head">
+            <span class="section-label">Popular technical topics</span>
+            <h2>Learn one practical concept at a time.</h2>
+            <p>Start with focused explanations, examples, and interactive practice from the course library.</p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <div class="icon-box">&lt;/&gt;</div>
+              <h3>HTML document structure</h3>
+              <p>Learn how doctype, head, body, headings, and semantic elements form an accessible web page.</p>
+              <div class="course-actions"><a class="secondary-btn" href="course.html?course=html&amp;section=html-basics">Read HTML lesson</a></div>
+            </article>
+            <article class="card">
+              <div class="icon-box">SQL</div>
+              <h3>SQL joins and data relationships</h3>
+              <p>Understand how tables connect and practice querying relational data with a browser SQL editor.</p>
+              <div class="course-actions"><a class="secondary-btn" href="course.html?course=sql&amp;section=joins">Practice SQL</a></div>
+            </article>
+            <article class="card">
+              <div class="icon-box">架</div>
+              <h3>System design foundations</h3>
+              <p>Explore requirements, estimation, storage, caching, and architecture trade-offs through practical examples.</p>
+              <div class="course-actions"><a class="secondary-btn" href="course.html?course=system-design-interview-blueprint&amp;section=framework">Study system design</a></div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -132,10 +164,10 @@
           <div>© <span id="year"></span> All rights reserved.</div>
         </div>
 
-        <div class="socials" aria-label="Social links">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="YouTube">YT</a>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
     </footer>
