@@ -1,80 +1,107 @@
 # Heavy Engineers
 
 <div align="center">
-
-  <img src="assets/heavy-engineers-logo.svg" alt="Heavy Engineers logo" width="320" />
-
-  <p>
-    <strong>Engineering learning for students and professionals who want clarity, discipline, and momentum.</strong>
-  </p>
+  <img src=".github/assets/repo-banner.svg" alt="Heavy Engineers banner" width="100%" />
 
   <p>
     <a href="https://heavyengineers.github.io/">
       <img alt="Website" src="https://img.shields.io/badge/Website-Heavy%20Engineers-7C3AED?style=for-the-badge&logo=githubpages" />
     </a>
-    <img alt="Status" src="https://img.shields.io/badge/Status-Live-10B981?style=for-the-badge" />
-    <img alt="Type" src="https://img.shields.io/badge/Type-Static%20Site-0EA5E9?style=for-the-badge" />
+    <a href="https://github.com/heavyengineers/heavyengineers.github.io/actions/workflows/deploy-pages.yml">
+      <img alt="Deploy status" src="https://github.com/heavyengineers/heavyengineers.github.io/actions/workflows/deploy-pages.yml/badge.svg" />
+    </a>
+    <img alt="Static site" src="https://img.shields.io/badge/Type-Static%20Site-0EA5E9?style=for-the-badge" />
   </p>
 
+  <p>
+    <strong>Engineering learning for students and professionals who want clarity, practice, and momentum.</strong>
+  </p>
 </div>
 
-Heavy Engineers is a modern engineering learning platform that helps learners build technical confidence through structured courses, quick revision notes, career-focused guidance, and practical learning systems.
+Heavy Engineers is a modern learning platform focused on helping people build strong engineering fundamentals through structured courses, revision notes, downloadable resources, and mentorship-oriented support.
 
 ## Live site
 
 https://heavyengineers.github.io/
 
-## What this repository contains
+## Why this project exists
 
-This repository hosts the public website for Heavy Engineers, built as a lightweight static site for GitHub Pages.
+Heavy Engineers was created to make engineering learning more usable, structured, and practical. The site helps learners:
 
-- Modern homepage and marketing sections
-- Course discovery page
-- Notes and resource download page
-- About page
-- Contact page with email submission flow
-- Downloadable study PDFs
-- Responsive layout for mobile and desktop
+- understand core engineering concepts clearly
+- stay consistent with focused study systems
+- access quick PDF notes and learning resources
+- prepare for interviews, exams, and real-world application
 
-## Project structure
+## Highlights
+
+- Premium landing page for a modern learning brand
+- Multi-page static website for courses, notes, about, and contact
+- Downloadable study resource PDFs
+- responsive design for mobile and desktop
+- GitHub Pages deployment with a working deployment workflow
+
+## Repository structure
 
 ```text
 .
-├── about.html
-├── contact.html
-├── courses.html
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   ├── config.yml
+│   │   └── feature_request.md
+│   ├── assets/
+│   │   └── repo-banner.svg
+│   └── workflows/
+│       └── deploy-pages.yml
+├── assets/
+│   ├── favicon.svg
+│   └── heavy-engineers-logo.svg
 ├── downloads/
 │   ├── engineering-foundations.pdf
 │   ├── problem-solving-guide.pdf
 │   └── exam-notes-kit.pdf
+├── about.html
+├── contact.html
+├── courses.html
 ├── index.html
 ├── notes.html
 ├── script.js
 ├── styles.css
-├── assets/
-│   └── heavy-engineers-logo.svg
+├── LICENSE
 ├── README.md
-└── .gitignore
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── .gitignore
+└── .nojekyll
 ```
 
-## Highlights
+## Featured courses
 
-- Strong brand identity and premium landing page look
-- Clear learning pathways for engineering students and aspirants
-- Clean resource access for PDF notes and revision material
-- Mobile-friendly design with responsive navigation
-- Simple deployment flow via GitHub Pages
+### Engineering Foundations
+- Ideal for new learners
+- Covers core engineering thinking and fundamentals
+- Includes downloadable notes and structured learning path
+- Price: ₹2,999
+
+### Problem Solving Mastery
+- Great for revising and applying concepts systematically
+- Includes practice-based guidance and reasoning frameworks
+- Price: ₹4,499
+
+### Career Launch Kit
+- Designed for interview prep and career growth
+- Includes study flow, notes, and action-oriented planning
+- Price: ₹3,799
 
 ## Local development
-
-To run the site locally:
 
 ```bash
 cd heavyengineers.github.io
 python3 -m http.server 8000
 ```
 
-Then open:
+Then visit:
 
 ```text
 http://localhost:8000
@@ -82,27 +109,29 @@ http://localhost:8000
 
 ## Deployment
 
-This project is deployed using GitHub Pages from the repository's main branch.
+This project is deployed to GitHub Pages using the workflow in `.github/workflows/deploy-pages.yml`.
 
 ```bash
 git add .
-git commit -m "Update site content"
+git commit -m "Update site"
 git push origin main
 ```
 
-Once pushed, the site updates automatically on the public GitHub Pages URL.
+GitHub Actions handles the deployment automatically after push to `main`.
+
+## Contributing
+
+We welcome improvements, bug fixes, and feature ideas.
+
+Please read the project guidelines in [CONTRIBUTING.md](CONTRIBUTING.md) and the code of conduct in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## Contact
 
-For inquiries, course support, or collaboration:
+For business inquiries, partnership opportunities, or course-related questions:
 
 - Email: ayushnandanwar003@gmail.com
 - Website: https://heavyengineers.github.io/
 
-## Mission
-
-Heavy Engineers exists to make engineering learning more accessible, structured, and outcome-driven. The goal is to help learners move from confusion to confidence through consistency, practice, and strong fundamentals.
-
 ## License
 
-This project is currently configured for personal/public website hosting and educational use. Please contact the repository owner before reusing content for commercial purposes.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
