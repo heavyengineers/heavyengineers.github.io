@@ -754,6 +754,27 @@ function renderSectionMarkup(section, sectionIndex, courseSlug = '') {
   const readingNoteHtml = section.readingNote
     ? `<div class="reading-note"><span>Reader's note</span><p>${renderRichText(section.readingNote)}</p></div>`
     : '';
+  const fdeReadingModules = courseSlug === 'ai-for-forward-deployed-engineers'
+    ? (window.FDE_READING_CONTENT?.[section.id] || [])
+    : [];
+  const fdeReadingHtml = fdeReadingModules.length
+    ? `<div class="fde-reading">
+        <div class="fde-reading-heading">
+          <span class="section-label">Deep reading and fieldwork</span>
+          <p>Work through each module slowly. Write the artifact before moving on; the course is designed to turn reading into delivery judgment.</p>
+        </div>
+        ${fdeReadingModules.map((module, index) => `
+          <article class="fde-reading-module">
+            <span class="fde-module-number">${String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h3>${renderRichText(module.title)}</h3>
+              <p>${renderRichText(module.body)}</p>
+              <div class="fde-fieldwork"><strong>Fieldwork</strong><span>${renderRichText(module.exercise)}</span></div>
+            </div>
+          </article>
+        `).join('')}
+      </div>`
+    : '';
   const codeLanguage = courseSlug === 'sql' || courseSlug === 'html'
     ? courseSlug
     : courseSlug === 'system-design-interview-blueprint'
@@ -786,6 +807,7 @@ function renderSectionMarkup(section, sectionIndex, courseSlug = '') {
       ${paragraphHtml}
       ${quoteHtml}
       ${readingNoteHtml}
+      ${fdeReadingHtml}
       ${cardsHtml}
       ${visualsHtml}
       ${renderExpertReading(section, courseSlug)}
