@@ -20,19 +20,3 @@ if (menuToggle && navLinks) {
   });
 }
 
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    contactForm.reset();
-
-    const button = contactForm.querySelector('button[type="submit"]');
-    if (button) {
-      const originalText = button.textContent;
-      button.textContent = 'Sent!';
-      setTimeout(() => {
-        button.textContent = originalText;
-      }, 1800);
-    }
-  });
-}

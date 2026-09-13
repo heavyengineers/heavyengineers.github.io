@@ -20,8 +20,7 @@
     <header class="topbar">
       <div class="container nav">
         <a href="index.html" class="brand" aria-label="Heavy Engineers home">
-          <span class="brand-mark">HE</span>
-          Heavy Engineers
+          <img src="assets/heavy-engineers-logo.svg" alt="Heavy Engineers logo" class="brand-logo" />
         </a>
 
         <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -71,20 +70,22 @@
           </div>
 
           <div class="page-card">
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/hello@heavyengineers.com" method="POST">
+              <input type="hidden" name="_subject" value="Heavy Engineers Contact Form" />
+              <input type="hidden" name="_captcha" value="false" />
               <div class="field">
                 <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Your name" />
+                <input id="name" name="name" type="text" placeholder="Your name" required />
               </div>
 
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="your@email.com" />
+                <input id="email" name="email" type="email" placeholder="your@email.com" required />
               </div>
 
               <div class="field">
                 <label for="message">Message</label>
-                <textarea id="message" placeholder="Tell us what you're looking for..."></textarea>
+                <textarea id="message" name="message" placeholder="Tell us what you're looking for..." required></textarea>
               </div>
 
               <button type="submit" class="primary-btn">Send Message</button>
