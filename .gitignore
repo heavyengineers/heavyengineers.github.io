@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Editor directories
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node
+dist/
+node_modules/
+
+# Logs
+*.log
