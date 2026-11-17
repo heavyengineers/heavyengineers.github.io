@@ -96,4 +96,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://heavyengineers.github.io/affiliate-disclosure.html</loc>
+  </url>
 </urlset>
