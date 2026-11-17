@@ -1838,7 +1838,7 @@ function initializeNotifyForm() {
     }
 
     if (notifyStatus) {
-      notifyStatus.textContent = `Great choice — we will notify you when ${targetCourse} launches.`;
+      notifyStatus.textContent = `${targetCourse} selected. Saving this interest stores it only in this browser; no notification will be sent.`;
       notifyStatus.classList.add('visible');
     }
   });
@@ -1847,15 +1847,13 @@ function initializeNotifyForm() {
     event.preventDefault();
     const formData = new FormData(notifyForm);
     const payload = {
-      name: String(formData.get('name') || '').trim(),
-      email: String(formData.get('email') || '').trim(),
       course: String(formData.get('course') || '').trim(),
-      createdAt: new Date().toISOString(),
+      savedAt: new Date().toISOString(),
     };
 
-    if (!payload.name || !payload.email || !payload.course) {
+    if (!payload.course) {
       if (notifyStatus) {
-        notifyStatus.textContent = 'Please complete your name, email, and selected course to join the waitlist.';
+        notifyStatus.textContent = 'Please select a course.';
         notifyStatus.classList.add('visible');
       }
       return;
@@ -1867,7 +1865,7 @@ function initializeNotifyForm() {
       localStorage.setItem('he-notify-list', JSON.stringify(existing));
 
       if (notifyStatus) {
-        notifyStatus.textContent = `Your request for ${payload.course} is saved in this browser. We will connect the launch list to email delivery soon.`;
+        notifyStatus.textContent = `Your interest in ${payload.course} has been saved on this device only. No email or notification will be sent.`;
         notifyStatus.classList.add('visible');
       }
 
